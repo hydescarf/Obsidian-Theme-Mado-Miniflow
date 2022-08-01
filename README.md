@@ -14,7 +14,6 @@ This theme is intended for minimal workflow like what you're looking at currentl
 - [Guideline](#guideline)
 - [Changelog](#changelog)
 
----
 
 ## Installation
 
@@ -23,9 +22,8 @@ This theme is intended for minimal workflow like what you're looking at currentl
 
 Or
 
-- Download the theme through Obsidian's theme store!
+- ~~Download the theme through Obsidian's theme store!~~ (Not ready yet)
 
----
 
 ## Guideline
 
