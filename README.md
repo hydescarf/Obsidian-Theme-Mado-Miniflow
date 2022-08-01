@@ -23,7 +23,7 @@ This theme is intended for minimal workflow like what you're looking at currentl
 
 Or
 
-- ~~Download the theme through Obsidian's theme store!~~ (Not ready yet)
+- Download the theme through Obsidian's theme store!
 
 
 ## Guideline
