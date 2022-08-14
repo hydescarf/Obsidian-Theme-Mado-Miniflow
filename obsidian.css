@@ -9,6 +9,7 @@
 	--mado-white-6:hsla(212, 17%, 80%, 0.3);
 	--mado-white-4:hsla(180, 33%, 99%, 1);
 	--mado-white-5:hsla(207, 10%, 90%, 0.1);
+	--mado-white-7:hsla(210, 45%, 95%, 0.9);
 	
 	--mado-blue-1:hsla(209, 95%, 62%, 1);
 	--mado-blue-2:hsla(209, 85%, 72%, 0.5);
@@ -64,6 +65,8 @@
 	--background-secondary-alt:	var(--mado-gray-5);
 	--background-tertiary:		var(--mado-white-3);
 	
+	--background-secondary-trans:		var(--mado-white-7);
+	
 	--background-accent:	var(--mado-blue-1);	
 	--background-fourth:	var(--mado-white-4);
 	--background-fifth:		var(--mado-white-5);
@@ -97,6 +100,7 @@
 	--mado-white-6:hsla(212, 17%, 0%, 0.3);
 	--mado-white-4:hsla(215, 22%, 13%, 1);
 	--mado-white-5:hsla(207, 10%, 10%, 0.1);
+	--mado-white-7:hsla(214, 24%, 15%, 0.5);
 	
 	--mado-black-1:hsla(0, 0%, 73%, 1);
 	--mado-black-2:hsla(213, 33%, 65%, 1);
@@ -142,6 +146,8 @@
 	--background-secondary-alt:	var(--mado-gray-5);
 	--background-tertiary:		var(--mado-white-3);
 	--background-primary-alt:	var(--mado-white-6);
+	
+	--background-secondary-trans:		var(--mado-white-7);
 	
 	--background-accent:	var(--mado-blue-1);	
 	--background-fourth:	var(--mado-white-3);
@@ -226,6 +232,10 @@ body{
 	opacity:0.7;
 	z-index:10;
 }
+.titlebar-button.mod-back,
+.titlebar-button.mod-forward{
+	padding:9px 17px;
+}
 
 .titlebar-button:hover{
 	background:var(--button-hover);
@@ -236,7 +246,7 @@ body{
 	color:var(--text-on-accent);
 }
 
-.app-container{
+body:not(.is-mobile) .app-container{
 	/* readjust height as to fill the gap caused by hiding the titlebar */
 	margin-top:-25px;
 	height:calc(100% + 25px);
@@ -309,7 +319,6 @@ a{
 hr{
 	background-color:var(--background-modifier-border);
 	height:2px;
-	margin:4rem 0;
 }
 
 .markdown-preview-view{
@@ -381,12 +390,12 @@ input[type=checkbox]:checked{
 
 /* Checkbox Bullet Point Alignment */
 .task-list-item .external-link{
-	vertical-align:middle;
+	/* vertical-align:middle; */
 }
 
 /* Checkbox with link visual fix */
 .task-list-item .external-link{
-	vertical-align:top;
+	/* vertical-align:top; */
 }
 /*
 --------------------------- 
@@ -448,12 +457,12 @@ ul>li::marker{
 
 /* fix link in bullet list breaking to new line */
 li .external-link{
-	display:inline-block;
-	word-break:break-word;
-	vertical-align:top;
-	overflow-wrap: break-word;
-	word-wrap: break-word;
-	max-width: 98%;
+	/* display:inline-block; */
+	/* word-break:break-word; */
+	/* vertical-align:middle; */
+	/* overflow-wrap: break-word; */
+	/* word-wrap: break-word; */
+	/* max-width: 98%; */
 }
 
 
@@ -599,71 +608,60 @@ ul > li.task-list-item.is-checked *,
 --------------------------- --------------------------- 
 */
 
-/* Left dock Ribbon hidden (includes expand button) */
-.workspace-ribbon{
-	visibility:collapse;
-	position:absolute;
+/* Remove background and give space to titlebar buttons */
+.workspace .workspace-ribbon.side-dock-ribbon{
+	background:none;
+	margin-top:35px;
+	border:none;
+}
+.workspace .workspace-ribbon.side-dock-ribbon.mod-left{
+	margin-right:7px;
+}
+.workspace .workspace-ribbon.side-dock-ribbon.mod-right{
+	margin-left:7px;
 }
 
-/* Show expand button when hovered */
+/* Reveal all children buttons when parent is hovered */
+.workspace-ribbon:hover .side-dock-settings,
+.workspace-ribbon:hover .side-dock-actions,
+.workspace-ribbon:hover .workspace-ribbon-collapse-btn{
+	opacity:1;
+}
+
+
+/* Style ribbon buttons */
 .workspace-ribbon-collapse-btn,
 .side-dock-actions,
-.side-dock-settings{
-	position:fixed;
-	visibility:visible;
-	top:0;
-	opacity:0;
-	padding:7px;
+.side-dock-settings,
+.side-dock-ribbon-action{
 	color:var(--color-dark-gray);
 	border-radius:var(--button-radius);
 	transition:0.1s background, 0.1s opacity;
 }
-
-
-.side-dock-actions{
-	top:initial;
-	bottom:114px;
-	/* left:-23px; */
-	padding:0;
-}
-.side-dock-settings{
-	top:initial;
-	bottom:0;
-	/* left:-23px; */
-	margin-bottom:0;
-	padding:0;
-}
-.side-dock-ribbon-action{
-	color:var(--text-muted);
-	padding:7px;
-}
-
-.mod-right.workspace-ribbon,
-.mod-right .workspace-ribbon-collapse-btn{
-	right:0;
-}
-.workspace-ribbon-collapse-btn:hover,
-.side-dock-actions:hover,
-.side-dock-settings:hover{
-	visibility:visible;
-	opacity:1;
+.workspace-ribbon-collapse-btn:hover{
 	background:var(--button-hover);
-	border:1px solid var(--color-gray);
 	color:var(--color-dark-gray);
 }
-.side-dock-actions:hover,
-.side-dock-settings:hover{
-	left:0;
+
+/* Hide buttons only on desktop, not mobile */
+body:not(.is-mobile) .side-dock-actions,
+body:not(.is-mobile) .side-dock-settings,
+body:not(.is-mobile) .workspace-ribbon-collapse-btn{
+	opacity:0;
 }
 
+
+/* Remove addition margins on the side dock ribbons */
+.side-dock-settings{
+	margin-bottom:0;
+}
+.workspace-ribbon-collapse-btn{
+	margin-top:0;
+}
 
 /* Hide dock's tab menu, and show them when hovered  */
 .workspace-tab-header-container{
-	position:absolute;
-	top:0;
 	opacity:0;
-	z-index:1;
-	/* height:1px; */
 	transition:opacity 0.1s;
 	border-radius:var(--button-radius);
 	border:var(--border);
@@ -672,7 +670,6 @@ ul > li.task-list-item.is-checked *,
 }
 .workspace-tab-header-container:hover{
 	opacity:1;
-	height:auto;
 }
 
 /* remove border-radius on icons */
@@ -756,6 +753,17 @@ ul > li.task-list-item.is-checked *,
 	background:var(--background-primary);
 }
 
+/* Mobile Fixes */
+.is-mobile .view-header-title{
+	line-height:initial;
+	padding:12px 13px;
+	font-size:1.1rem;
+}
+.is-mobile .view-header-icon,.is-mobile .view-action{
+	padding:7px;
+	margin:0 3px;
+}
+
 /*
 --------------------------- 
 	Pane Resizer Handle
@@ -792,9 +800,7 @@ ul > li.task-list-item.is-checked *,
 	border-top-left-radius: 0px;
 }
 
-.workspace-split.mod-vertical.mod-root .workspace-leaf{
-	/* border-top-right-radius: 23px; */
-	/* border-top-left-radius: 23px; */
+body:not(.is-mobile) .workspace-split.mod-vertical.mod-root .workspace-leaf{
 	border-radius:23px;
 	border-bottom-right-radius: 0;
 	border-bottom-left-radius: 0;
@@ -804,13 +810,21 @@ ul > li.task-list-item.is-checked *,
 	border-bottom-left-radius: 0;
 }
 
+/* Apply spacing between workpanes */
 .workspace-split.mod-vertical.mod-root,
 .workspace-split.mod-vertical.mod-root .workspace-split{
 	display:flex;
 	gap:33px;
 }
-.workspace>.workspace-split.mod-vertical{
-	padding:33px 33px 0;
+/* Apply margin to the side of the middle pain */
+body:not(.is-mobile) .workspace>.workspace-split.mod-vertical{
+	padding:33px 0 0;
+}
+.workspace>.workspace-split.mod-horizontal.mod-left-split{
+	padding-right:33px;
+}
+.workspace>.workspace-split.mod-horizontal.mod-right-split{
+	padding-left:33px;
 }
 
 .workspace-split.mod-vertical.mod-root .workspace-leaf{
@@ -824,6 +838,10 @@ ul > li.task-list-item.is-checked *,
 	border-top-right-radius: 0px;
 }
 
+.is-mobile .markdown-rendered{
+	padding:0 43px;
+}
+
 /*
 --------------------------- 
 	Left Dock Styling
@@ -833,34 +851,21 @@ ul > li.task-list-item.is-checked *,
 
 /* Left dock navigation (new note, new folder, reorder) */
 .mod-left-split .workspace-leaf-content[data-type="file-explorer"] .nav-header{
-	position:absolute;
-	top:13px;
-	right:0;
-	flex-direction:column;
-	z-index:1;
 	padding:0;
 	opacity:0;
 }
 .mod-left-split .workspace-leaf-content[data-type="file-explorer"] .nav-header:hover{
-	right:0;
 	opacity:1;
 }
 
-.mod-left-split .workspace-leaf-content[data-type="file-explorer"] .nav-header .nav-buttons-container{
-	flex-direction:column;
-}
 .mod-left-split .nav-header .nav-action-button{
-	padding:7px 7px 3px;
-	margin:0;
+	padding:6px 13px 0;
+	margin:0 2px;
 	color:var(--color-dark-gray);
 	border-radius:var(--button-radius);
 	transition:0.1s background, 0.1s opacity;
 	background:var(--background-secondary);
-	top:0;
 	border:1px solid var(--color-gray);
-}
-.mod-left-split .workspace-leaf-content:not([data-type="file-explorer"]) .nav-header .nav-action-button{
-	margin:0 1px;
 }
 .mod-left-split .nav-header .nav-action-button:hover{
 	background:var(--button-hover);
@@ -879,10 +884,6 @@ ul > li.task-list-item.is-checked *,
 	display:none;  /* ADJUSTABLE CSS */
 }
 
-/* Give space for title-bar dragging */
-.mod-left-split{
-	padding-top:22px;
-}
 
 .mod-left-split .workspace-leaf-content,
 .mod-right-split .workspace-leaf-content{
@@ -892,17 +893,15 @@ ul > li.task-list-item.is-checked *,
 	gap:4px;
 	user-select:none;
 	padding-inline:8px;
-	padding-block:33px 8px;	
 	max-width:330px;
 	align-self:end;
 }
 .mod-right-split .workspace-leaf-content{
-	padding-block:8px 33px;
 	align-self:start;
 }
 
 .nav-folder-children{
-	padding:13px 0 13px 33px;
+	padding:3px 0 13px 33px;
 }
 
 .nav-folder-children,
@@ -980,9 +979,6 @@ ul > li.task-list-item.is-checked *,
 	transform:translateY(-50%);
 }
 
-.nav-file-title.is-active svg{
-	animation:0.3s bounceback;
-}
 
 .nav-file-title:hover,
 .side-dock-ribbon-action:hover{
@@ -993,11 +989,6 @@ ul > li.task-list-item.is-checked *,
 	background:var(--button-selected-hover);
 }
 
-@keyframes bounceback{
-	0% { transform:translateY(0%); }
-	60% { transform:translateY(10%); }
-	100% { transform:translateY(0%); }
-}
 
 /* Prevent from overflowing and show ... instead */
 .nav-file-title-content{
@@ -1039,15 +1030,20 @@ ul > li.task-list-item.is-checked *,
 	background:var(--background-primary);
 }
 
-.workspace-split.mod-horizontal.mod-right-split{
-/* .workspace-split.mod-horizontal.mod-left-split{ */ /* ADJUSTABLE CSS */
+
+/* Dock Top Margin for both right and left */
+.workspace-split.mod-horizontal.mod-right-split,
+.workspace-split.mod-horizontal.mod-left-split{ /* ADJUSTABLE CSS */
 	padding-block:73px 43px;
 	gap:33px;
+}
+.workspace-split.mod-horizontal.mod-left-split{ /* ADJUSTABLE CSS */
+	padding-block-start:35px;
 }
 
 .workspace-split.mod-right-split .view-content,
 .workspace-split.mod-left-split .view-content{
-	padding-top:53px;
+	/* padding-top:53px; */
 }
 .workspace-split.mod-right-split .view-content .tree-item-self.is-clickable:hover,
 .workspace-split.mod-left-split .view-content .tree-item-self.is-clickable:hover{
@@ -1108,6 +1104,10 @@ input[type='password'],
 input[type='number']{
 	border:var(--border);
 }
+.theme-dark .search-result-file-matched-text{
+	background:none;
+	border-bottom:2px solid var(--text-highlight-bg);
+}
 
 
 
@@ -1151,6 +1151,10 @@ input[type='number']{
 .modal.mod-settings{
 	max-width:67vw;
 	height:83vh;
+}
+.is-mobile .modal.mod-settings{
+	max-width:calc(100% - 20px);
+	height:70vh;
 }
 
 .modal.mod-settings .vertical-tabs-container,
@@ -1519,6 +1523,12 @@ button.mod-cta,
 
 /* ADJUSTABLE CSS */
 /* Wave design at the bottom */
+.workspace{
+	background-color:var(--background-secondary);
+}
+.is-translucent .workspace{
+	background-color:var(--background-secondary-trans);
+}
 .workspace:before{
 	content:"";
 	position:absolute;
