@@ -4,7 +4,7 @@ The wave design is made with https://www.shapedivider.app/
 
 The special CSS class `mado-side-button` is removed on this version, however, `mado-header` is remained.
 
-This theme is intended for minimal workflow like what you're looking at currently, and may not support other types of plugin and workflow.
+This theme is intended for minimal workflow like what you're looking at currently, and may not support other types of plugin and workflow. However, feel free to pull a request for plugin supports, they may be in lower priorities but I'll take my time to support them
 
 ![](cover-light.png)
 ![](cover-dark.png)
@@ -44,7 +44,7 @@ v0.2.0
 - Workspace tabs, as well as sidebar vertical spacing are readjusted.
 - "File Explorer" buttons are restyled and reverted back to their original position.
 - Drag-Handler position are adjusted, you can now easily find their position by hovering just at the edges of the main/middle pane.
-- Highlighted text in dark mode from the search result is now more readible.
+- Highlighted text in dark mode from the search result is now more readable.
 - Background issue in Translucent Mode is now fixed.
 
 - Mobile fixes:
