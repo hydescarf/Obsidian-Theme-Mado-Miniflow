@@ -177,9 +177,6 @@
 body{
 	background:var(--background-secondary);
 }
-body.is-mobile{
-	padding:0!important;
-}
 
 /*
 --------------------------- 
