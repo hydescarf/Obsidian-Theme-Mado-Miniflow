@@ -11,33 +11,45 @@ This theme is intended for minimal workflow like what you're looking at currentl
 
 ## Index
 
+- [Roadmap](#roadmap)
 - [Guideline](#guideline)
 - [Changelog](#changelog)
 
 
+## Roadmap
+To stay true to the theme "minimal", I do not plan to adjust the main styles that affect the current appearance.
+
+However, to support the user experiences in the long run, I will have to refactor the codes for future Style Settings and Plugins support.
+This theme wasn't initially built with those in mind, so this might take a long time to complete.
+
+The current workflow for now will be focusing more on bug fixing and minimal style adjusting, and some minor code adjustment in the background during my free time.
+I will be focusing on Mado Miniflow first, and will then backport everything back to Mado 11.
+
+For now, if you need any supports for your workflow (eg. method to show the status bar), open an issue and I'll guide you with temporary snippet fix!
+
 
 ## Guideline
-
-### Where are all the buttons?
-Similar to Mado-11, buttons are all hidden by default, and can be hovered to reveal them at their default position. However, the hovering is much easier to be triggered here.
-
-
-### Other
-
+Similar to Mado-11, buttons are all hidden by default, and can be hovered to reveal them at their default position.
 - Recommended Font: Segoe UI, Noto Sans JP
 - Resize Handle - hidden, hover to reveal.
 - Status Bar, App Title, Vault Title - hidden.
 
 
-
-### Adjustable CSS Elements
+###### Adjustable CSS Elements
 There are a few adjustable elements in the file where user can directly adjust them.
 They can be found by searching for the keyword "`/* ADJUSTABLE CSS */`" in the file.
 - "Navigation Folder Title" or "Vault Title" on the left can be toggled on and off by `display:none`.
+- Same goes to "Status Bar"
 - The Wave design at the bottom can be disabled.
 - Finally, the `max-width` of the notes is now fixed at `830px`.
 
+
 ## Changelog  
+v0.2.1
+- Fix the remaining issue for mobile styling.
+- Bullet point restyled to match the position with the text.
+- Remove default background color when selected file is unfocused.
+- Lines in Graph View are now more visible.
 
 v0.2.0
 - Dock ribbon buttons are restyled for easier hovering.
@@ -46,7 +58,6 @@ v0.2.0
 - Drag-Handler position are adjusted, you can now easily find their position by hovering just at the edges of the main/middle pane.
 - Highlighted text in dark mode from the search result is now more readable.
 - Background issue in Translucent Mode is now fixed.
-
 - Mobile fixes:
    - Note title and buttons are adjusted.
    - Side margins beside the main note are removed.

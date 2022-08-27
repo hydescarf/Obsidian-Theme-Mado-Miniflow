@@ -14,6 +14,7 @@
 	--mado-blue-1:hsla(209, 95%, 62%, 1);
 	--mado-blue-2:hsla(209, 85%, 72%, 0.5);
 	--mado-blue-3:hsla(245, 75%, 65%, 1);
+	--mado-blue-4:hsla(215, 57%, 63%, 1);
 	
 	--mado-black-1:hsla(0, 0%, 13%, 1);
 	--mado-black-2:hsla(220, 20%, 35%, 1);
@@ -79,8 +80,8 @@
 	--text-on-accent:	var(--mado-white-1);
 	--text-faint:		var(--mado-gray-6);
 	--text-highlight-bg:var(--mado-yellow);
-	--text-bold:		var(--mado-black-2);
-	--text-em:			var(--mado-gray-4);
+	--text-bold:		var(--mado-black-1);
+	--text-em:			var(--mado-blue-4);
 	--text-muted:		hsla(218, 19%, 39%, 1);
 	
 	--background-modifier-error:	var(--mado-red-1);
@@ -161,8 +162,8 @@
 	--text-on-accent:	var(--mado-white-1);
 	--text-faint:		var(--mado-gray-6);
 	--text-highlight-bg:var(--mado-yellow);
-	--text-bold:		var(--mado-black-2);
-	--text-em:			var(--mado-gray-6);
+	--text-bold:		var(--mado-black-1);
+	--text-em:			var(--mado-blue-4);
 	--text-muted: 		hsl(218, 17%, 58%);
 	
 	--background-modifier-error:	var(--mado-red-1);
@@ -268,7 +269,7 @@ body:not(.is-mobile) .app-container{
 */
 /* hide status bar */
 .status-bar{
-	display:none;
+	display:none; /* ADJUSTABLE CSS */
 }
 
 
@@ -439,10 +440,11 @@ li{
 	padding-block:4px;
 }
 
-ul>li::marker{
+ul>li:not(.task-list-item)::marker{
 	/* Resize bullet point to a smaller version */
 	color:var(--color-dark-gray);
-	font-size:0.6rem;
+	font-size:0.95rem;
+	content:"・ ";
 }
 
 /* Adjust line position to fit below bullet point (preview) */
@@ -1000,6 +1002,9 @@ body:not(.is-mobile) .workspace>.workspace-split.mod-vertical{
 .nav-file-title.is-active:hover{
 	background:var(--button-selected-hover);
 }
+body:not(.is-grabbing) .nav-folder-title:hover{
+	color:var(--color-accent-dark);
+}
 
 
 /* Prevent from overflowing and show ... instead */
@@ -1020,6 +1025,12 @@ body:not(.is-mobile) .workspace>.workspace-split.mod-vertical{
 	background-color:none;
 }
 
+
+/* Remove default background colour when selected file is unfocused */
+.workspace-leaf.mod-active .nav-folder.has-focus > .nav-folder-title,
+.workspace-leaf.mod-active .nav-file.has-focus{
+	background:none;
+}
 
 /*
 --------------------------- 
@@ -1076,6 +1087,14 @@ body:not(.is-mobile) .workspace>.workspace-split.mod-vertical{
 	Overall / Remaining Styling
 ---------------------------
 */
+
+
+.theme-light .graph-view.color-line{
+	color:var(--color-light-gray);
+}
+.theme-dark .graph-view.color-line{
+	color:var(--color-medium-gray);
+}
 
 /* Adjust remaining background colours to match the theme */
 /* Includes Docks' tab-menu buttons */
