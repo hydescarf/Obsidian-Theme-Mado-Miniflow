@@ -419,9 +419,14 @@ ul,ol{
  /* Not sure how to style it without that for source-view */
 .cm-indent{
 	/* Build spaces at the start of each line (source) */
-	padding-left:12px;
-	padding-right:12px;
+	padding-left:3px;
+	margin-right:-3px;
 }
+/* Only append indent if it's from a list */
+.cm-hmd-list-indent .cm-indent{ 
+	padding-inline:12px;
+}
+
 
 /* Build spaces at the end of each listing to distinguish from each other (source) */
 .HyperMD-list-line-1+.HyperMD-list-line:not(.HyperMD-list-line-1):not(.HyperMD-list-line-2),
@@ -592,14 +597,15 @@ ul > li.task-list-item.is-checked *,
 }
 
 .markdown-source-view.mod-cm6 .HyperMD-quote.cm-line{
-	padding:13px 13px!important;
-	text-indent:0!important;
+	padding-block:9px 0;
 	border-left:3px solid var(--color-accent-alt);
+	position:relative;
 }
 .HyperMD-quote.cm-line+.HyperMD-quote.cm-line{
 	/* remove siblings padding-top */
-	padding-top:0!important;
+	padding-block:0 9px;
 }
+
 
 
 

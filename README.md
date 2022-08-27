@@ -17,9 +17,9 @@ This theme is intended for minimal workflow like what you're looking at currentl
 
 
 ## Roadmap
-To stay true to the theme "minimal", I do not plan to adjust the main styles that affect the current appearance.
+To stay true to the theme "minimal", I do not plan to adjust the main styles that will affect the current appearance.
 
-However, to support the user experiences in the long run, I will have to refactor the codes for future Style Settings and Plugins support.
+However, to support the user experiences in the long run, I will have to refactor the code for future Style Settings and Plugins support.
 This theme wasn't initially built with those in mind, so this might take a long time to complete.
 
 The current workflow for now will be focusing more on bug fixing and minimal style adjusting, and some minor code adjustment in the background during my free time.
@@ -45,6 +45,9 @@ They can be found by searching for the keyword "`/* ADJUSTABLE CSS */`" in the f
 
 
 ## Changelog  
+v0.2.3
+- Adjusted indent spacing for plain text and blockquotes.
+
 v0.2.2
 - Fixed footnote-jumping issue.
    - The wave-design has now moved to `body:before` as it's the reason that causing the issue.
