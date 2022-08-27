@@ -45,10 +45,14 @@ They can be found by searching for the keyword "`/* ADJUSTABLE CSS */`" in the f
 
 
 ## Changelog  
+v0.2.2
+- Fixed footnote-jumping issue.
+   - The wave-design has now moved to `body:before` as it's the reason that causing the issue.
+
 v0.2.1
-- Fix the remaining issue for mobile styling.
+- Fixed the remaining issue for mobile styling.
 - Bullet point restyled to match the position with the text.
-- Remove default background color when selected file is unfocused.
+- Removed default background color when selected file is unfocused.
 - Lines in Graph View are now more visible.
 - Adjusted colours for Italic and Bold
 

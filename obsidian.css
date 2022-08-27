@@ -787,7 +787,7 @@ body:not(.is-mobile) .workspace-ribbon-collapse-btn{
 /* Also adjusted thickness for easier finding/gripping */
 .workspace-split.mod-horizontal > * > .workspace-leaf-resize-handle{
 	background:none;
-	height:7px;
+	height:5px;
 	border:none;
 }
 
@@ -795,7 +795,7 @@ body:not(.is-mobile) .workspace-ribbon-collapse-btn{
 .workspace-split.mod-left-split > .workspace-leaf-resize-handle,
 .workspace-split.mod-right-split > .workspace-leaf-resize-handle{
 	background:none;
-	width:7px;
+	width:5px;
 	border:none;
 }
 
@@ -1553,13 +1553,13 @@ button.mod-cta,
 
 /* ADJUSTABLE CSS */
 /* Wave design at the bottom */
-.workspace{
+body{
 	background-color:var(--background-secondary);
 }
-.is-translucent .workspace{
+body.is-translucent{
 	background-color:var(--background-secondary-trans);
 }
-.workspace:before{
+body:before{
 	content:"";
 	position:absolute;
 	height:300px;
