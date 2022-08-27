@@ -756,12 +756,21 @@ body:not(.is-mobile) .workspace-ribbon-collapse-btn{
 /* Mobile Fixes */
 .is-mobile .view-header-title{
 	line-height:initial;
-	padding:12px 13px;
+	padding:11px 13px;
 	font-size:1.1rem;
+	-webkit-mask-image:none;
+	margin-right:5px;
 }
-.is-mobile .view-header-icon,.is-mobile .view-action{
-	padding:7px;
+.is-mobile .view-actions{
+	padding:0;
+}
+.is-mobile .view-header-icon, .is-mobile .view-action{
+	padding:9px;
 	margin:0 3px;
+}
+.is-mobile .view-header-icon svg, .is-mobile .view-action svg{
+	width:18px;
+	height:18px;
 }
 
 /*
@@ -1065,6 +1074,10 @@ body:not(.is-mobile) .workspace>.workspace-split.mod-vertical{
 ---------------------------
 */
 
+/* Mobile *quick test on live result* */
+.workspace-drawer{
+	height:calc(100% + 25px);
+}
 
 /* Adjust remaining background colours to match the theme */
 /* Includes Docks' tab-menu buttons */
