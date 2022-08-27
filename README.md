@@ -50,6 +50,7 @@ v0.2.1
 - Bullet point restyled to match the position with the text.
 - Remove default background color when selected file is unfocused.
 - Lines in Graph View are now more visible.
+- Adjusted colours for Italic and Bold
 
 v0.2.0
 - Dock ribbon buttons are restyled for easier hovering.
