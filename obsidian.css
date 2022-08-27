@@ -254,9 +254,6 @@ body:not(.is-mobile) .app-container{
 	margin-top:-25px;
 	height:calc(100% + 25px);
 }
-.is-mobile .app-container{
-	padding-top:25px;
-}
 
 /* Remove :before style that made up the weird spacing */
 .titlebar-button:before{
@@ -1079,7 +1076,11 @@ body:not(.is-mobile) .workspace>.workspace-split.mod-vertical{
 	Overall / Remaining Styling
 ---------------------------
 */
-
+/* mobile */
+.workspace-drawer-inner,
+.workspace-drawer-ribbon{
+	padding-top:35px;
+}	
 
 /* Adjust remaining background colours to match the theme */
 /* Includes Docks' tab-menu buttons */
