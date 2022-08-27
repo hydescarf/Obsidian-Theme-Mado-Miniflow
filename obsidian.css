@@ -1078,9 +1078,10 @@ body:not(.is-mobile) .workspace>.workspace-split.mod-vertical{
 */
 /* mobile */
 .workspace-drawer-inner,
-.workspace-drawer-ribbon{
+.workspace-drawer-ribbon,
+.is-mobile .workspace-leaf-content{
 	padding-top:35px;
-}	
+}
 
 /* Adjust remaining background colours to match the theme */
 /* Includes Docks' tab-menu buttons */
