@@ -2,9 +2,9 @@
 This is a minimal theme version derived from the theme [Mado-11](https://github.com/hydescarf/Obsidian-Theme-Mado-11) and is inspired by the app design of [Doctave](https://www.doctave.com/). Certain styles are added, tweaked and removed from the original theme.
 The wave design is made with https://www.shapedivider.app/
 
-
+>  
 > Notice: The style is currently being rewriting to support Obsidian v1.0 update!  
-
+>  
 
 The special CSS class `mado-side-button` is removed on this version, however, `mado-header` is remained.
 
