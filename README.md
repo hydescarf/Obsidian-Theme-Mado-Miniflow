@@ -2,13 +2,14 @@
 This is a minimal theme version derived from the theme [Mado-11](https://github.com/hydescarf/Obsidian-Theme-Mado-11) and is inspired by the app design of [Doctave](https://www.doctave.com/). Certain styles are added, tweaked and removed from the original theme.
 The wave design is made with https://www.shapedivider.app/
 
+The special CSS class `mado-side-button` is removed on this version, however, `mado-header` is remained.
+
+This theme is intended for minimal workflow like what you're looking at currently, and may not support other types of plugin and workflow. However, feel free to pull a request for plugin supports, they may be in lower priorities but I'll take my time to support them
+
 >  
 > Notice: The style is currently being rewriting to support Obsidian v1.0 update!  
 >  
 
-The special CSS class `mado-side-button` is removed on this version, however, `mado-header` is remained.
-
-This theme is intended for minimal workflow like what you're looking at currently, and may not support other types of plugin and workflow. However, feel free to pull a request for plugin supports, they may be in lower priorities but I'll take my time to support them
 
 ![](cover-light.png)
 ![](cover-dark.png)
