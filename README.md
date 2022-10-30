@@ -1,55 +1,49 @@
 # Obsidian Theme - Mado Miniflow
-This is a minimal theme version derived from the theme [Mado-11](https://github.com/hydescarf/Obsidian-Theme-Mado-11) and is inspired by the app design of [Doctave](https://www.doctave.com/). Certain styles are added, tweaked and removed from the original theme.
-The wave design is made with https://www.shapedivider.app/
+Mado Miniflow is a minimalism Obsidian theme, derived from the theme [Mado-11](https://github.com/hydescarf/Obsidian-Theme-Mado-11) and is inspired by the app design of [Doctave](https://www.doctave.com/).
+The wave design in the background is made with https://www.shapedivider.app/
 
-The special CSS class `mado-side-button` is removed on this version, however, `mado-header` is remained.
+This theme aims for a very simplified and clean workflow, unlike how spacious with Mado 11 is, Mado Miniflow lets you focus easily at the center of the screen.
 
-This theme is intended for minimal workflow like what you're looking at currently, and may not support other types of plugin and workflow. However, feel free to pull a request for plugin supports, they may be in lower priorities but I'll take my time to support them
+![](img/light-theme.png)
+![](img/dark-theme.png)
 
->  
-> Notice: The style is currently being rewriting to support Obsidian v1.0 update!  
->  
+Recommended fonts for this theme:
+- Text: Segoe UI, Noto Sans
+- Code: Fira Code
 
+## Mado CSS Classes For Fun!
 
-![](cover-light.png)
-![](cover-dark.png)
+**Mado-Heading**, for an alternative bulky button feel!
 
-## Index
+![](img/mado-heading.png)
 
-- [Roadmap](#roadmap)
-- [Guideline](#guideline)
-- [Changelog](#changelog)
+**Mado-Table**, fancy spacious table with few options such as header-positions `top, bottom, left, right, topless`, styling `stripe, border`, without the fancy style `normal`, and auto-widen `auto`.
 
+![](img/mado-table.png)
 
-## Roadmap
-To stay true to the theme "minimal", I do not plan to adjust the main styles that will affect the current appearance.
+**Mado-Panel**, turn all of you lists into panels. Options come with collapsible `list`, panel fixed-sizing `small, medium, large, long, short` with auto-resize `auto`.
+  
+Callout version comes with `task` option.
+  
+![](img/mado-panel.png)
 
-However, to support the user experiences in the long run, I will have to refactor the code for future Style Settings and Plugins support.
-This theme wasn't initially built with those in mind, so this might take a long time to complete.
+**Mado-Explorer**, turn your note into pseudo-File Explorer.
 
-The current workflow for now will be focusing more on bug fixing and minimal style adjusting, and some minor code adjustment in the background during my free time.
-I will be focusing on Mado Miniflow first, and will then backport everything back to Mado 11.
+**Mado-Timeline**, centering all elements with minor special adjustment.
 
-For now, if you need any supports for your workflow (eg. method to show the status bar), open an issue and I'll guide you with temporary snippet fix!
+**Mado-Daily**, manually stamp your daily card for continuous-streak bonus at every 2nd and 5th day!
 
-
-## Guideline
-Similar to Mado-11, buttons are all hidden by default, and can be hovered to reveal them at their default position.
-- Recommended Font: Segoe UI, Noto Sans JP
-- Resize Handle - hidden, hover to reveal.
-- Status Bar, App Title, Vault Title - hidden.
-
-
-###### Adjustable CSS Elements
-There are a few adjustable elements in the file where user can directly adjust them.
-They can be found by searching for the keyword "`/* ADJUSTABLE CSS */`" in the file.
-- "Navigation Folder Title" or "Vault Title" on the left can be toggled on and off by `display:none`.
-- Same goes to "Status Bar"
-- The Wave design at the bottom can be disabled.
-- Finally, the `max-width` of the notes is now fixed at `830px`.
-
+![](img/mado-timeline-explorer-daily.png)
 
 ## Changelog  
+
+v1.0.0
+- Refactored code to be less hacky and adapting Obsidian v1.0 new design.
+- More user-friendly easy-to-click buttons that lie at the edges of the screen. 
+- Implemented support for Style Settings plugin.
+- Introduced more built-in cssclass for fun.
+  - cssclass `mado-header` has renamed to `mado-heading` for consistency.
+
 v0.2.3
 - Adjusted indent spacing for plain text, code block and quote.
 
