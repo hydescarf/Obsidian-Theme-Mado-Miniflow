@@ -13,25 +13,25 @@ Recommended fonts for this theme:
 
 ## Mado CSS Classes For Fun!
 
-**Mado-Heading**, for an alternative bulky button feel!
+- **Mado-Heading**, for an alternative bulky button feel!
 
 ![](img/mado-heading.png)
 
-**Mado-Table**, fancy spacious table with few options such as header-positions `top, bottom, left, right, topless`, styling `stripe, border`, without the fancy style `normal`, and auto-widen `auto`.
+- **Mado-Table**, fancy spacious table with few options such as header-positions `top, bottom, left, right, topless`, styling `stripe, border`, without the fancy style `normal`, and auto-widen `auto`.
 
 ![](img/mado-table.png)
 
-**Mado-Panel**, turn all of you lists into panels. Options come with collapsible `list`, panel fixed-sizing `small, medium, large, long, short` with auto-resize `auto`.
+- **Mado-Panel**, turns all of your lists into panels. Options come with collapsible `list`, panel fixed-sizing `small, medium, large, long, short` with auto-resize `auto`.
   
-Callout version comes with `task` option.
+- Callout version comes with `task` option.
   
 ![](img/mado-panel.png)
 
-**Mado-Explorer**, turn your note into pseudo-File Explorer.
+- **Mado-Explorer**, turns your note into pseudo-File Explorer.
 
-**Mado-Timeline**, centering all elements with minor special adjustment.
+- **Mado-Timeline**, centering all elements with minor special adjustment.
 
-**Mado-Daily**, manually stamp your daily card for continuous-streak bonus at every 2nd and 5th day!
+- **Mado-Daily**, manually stamp your daily card for continuous-streak bonus at every 2nd and 5th day!
 
 ![](img/mado-timeline-explorer-daily.png)
 
