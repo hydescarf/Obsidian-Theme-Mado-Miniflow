@@ -2139,10 +2139,10 @@ div.kanban-plugin__lane-title-count{
 	margin-block:13px;
 	box-shadow:var(--panel-shadow);
 }
-.setting-item:last-child{
+.style-settings-heading .setting-item:last-child{
 	padding-bottom:0;
 }
-.setting-item+.setting-item-heading{
+.style-settings-heading .setting-item+.setting-item-heading{
 	margin-top:0;
 }
 .style-settings-collapse-indicator{
