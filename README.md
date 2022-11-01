@@ -12,66 +12,143 @@ Recommended fonts for this theme:
 - Code: Fira Code
 
 ## Mado CSS Classes For Fun!
-
-- **Mado-Heading**, for an alternative bulky button feel!
+<details>
+<summary><b>Mado-Heading</b></summary>
 
 ![](img/mado-heading.png)
 
-- **Mado-Table**, fancy spacious table with few options such as header-positions `top, bottom, left, right, topless`, styling `stripe, border`, without the fancy style `normal`, and auto-widen `auto`.
+```
+cssclass: mado-heading
+```
+Transforming your normal note into more bulky block button design!
+
+</details>
+<details>
+<summary><b>Mado-Explorer</b></summary>
+
+![](img/mado-explorer.png)
+
+```
+cssclass: mado-explorer
+```
+
+When placed onto the sidebar, it will become exactly like how File Explorer would look like. A.k.a. pseudo-File Explorer!
+There are rules for this to work:
+
+```
+1. You may only use <a>(link), <h1>(h1 heading) and <li>(list) in the note.
+2. <a> will act as first level file title.
+3. <h1> will act as first level folder title.
+4. <li> will act as first level folder's children, where its contents should fill with just <a>, and itself should be placed below <h1>.
+5. Second level folder, or nested <li>, is not possible.
+6. For <h1> to be foldable, you have to enable the foldable option in the settings.
+
+```
+
+Example:
+
+```
+[[File 1]]
+[[File 2]]
+# Folder 1
+- [[Listed File 1]]
+- [[Listed File 2]]
+[[File 3]]
+```
+
+</details>
+<details>
+<summary><b>Mado-Table</b></summary>
 
 ![](img/mado-table.png)
 
-- **Mado-Panel**, turns all of your lists into panels. Options come with collapsible `list`, panel fixed-sizing `small, medium, large, long, short` with auto-resize `auto`.
-  
-- Callout version comes with `task` option.
-  
+```
+cssclass: mado-table
+```
+
+Turns your normal-looking table into a fancy spacious one! With more options provided for you to tweak the like of it.
+Example:
+
+```
+cssclass: mado-table (special styling)
+cssclass: mado-table-XXX (special styling with XXX being the options)
+cssclass: mado-table-XXX, mado-table-XXX (special styling with multiple options)
+```
+
+```
+Options:
+mado-table-auto (auto-widen table size by its contents and center it)
+mado-table-normal (no special styling, include this if you wish to use other options without special styling)
+
+mado-table-stripe, mado-table-border (stripe/border design)
+mado-table-left, mado-table-right, mado-table-top, mado-table-bottom (define table-header position)
+mado-table-topless (remove table-header position on the top)
+```
+
+</details>
+<details>
+<summary><b>Mado-Panel</b></summary>
+
 ![](img/mado-panel.png)
 
-- **Mado-Explorer**, turns your note into pseudo-File Explorer.
+```
+cssclass: mado-panel
+```
 
-- **Mado-Timeline**, centering all elements with minor special adjustment.
+Turns your lists into panels! More fancy way to look and click. Also comes with options to tweak.
+Example:
 
-- **Mado-Daily**, manually stamp your daily card for continuous-streak bonus at every 2nd and 5th day!
+```
+cssclass: mado-panel (transform all lists into panels)
+cssclass: mado-panel-XXX (XXX being the options)
+cssclass: mado-panel-XXX, mado-panel-XXX (including more options, in this case, only `auto` is available as an extra)
 
-![](img/mado-timeline-explorer-daily.png)
+Options:
+mado-panel-list (long and thin size, lists can be nested)
+mado-panel-small, mado-panel-medium, mado-panel-large, mado-panel-long, mado-panel-short (define fixed-size, lists cannot be nested)
+mado-panel-auto (maintain the minimum fixed-size of above, while auto-widen based on its contents, not applicable to mado-panel-list)
+```
 
-## Changelog  
+Rule:
 
-v1.0.0
-- Refactored code to be less hacky and adapting Obsidian v1.0 new design.
-- More user-friendly easy-to-click buttons that lie at the edges of the screen. 
-- Implemented support for Style Settings plugin.
-- Introduced more built-in cssclass for fun.
-  - cssclass `mado-header` has renamed to `mado-heading` for consistency.
+```
+1. Only <li>(list) will turn into panel.
+2. The list can consist of <a>(link) or "[]"(Checkbox), or plain text.
+3. Nested list is not available except for `mado-panel-list`.
+```
+Callout version is also available if you need only one part of the list to become panel.
+Options in callout version can be chained directly.
+Example:
 
-v0.2.3
-- Adjusted indent spacing for plain text, code block and quote.
+```
+> [!mado-panel-small-auto]
+> - Listing
+```
 
-v0.2.2
-- Fixed footnote-jumping issue.
-   - The wave-design has now moved to `body:before` as it's the reason that causing the issue.
+</details>
+<details>
+<summary><b>Mado-Timeline</b></summary>
 
-v0.2.1
-- Fixed the remaining issue for mobile styling.
-- Bullet point restyled to match the position with the text.
-- Removed default background color when selected file is unfocused.
-- Lines in Graph View are now more visible.
-- Adjusted colours for Italic and Bold
+![](img/mado-timeline.png)
 
-v0.2.0
-- Dock ribbon buttons are restyled for easier hovering.
-- Workspace tabs, as well as sidebar vertical spacing are readjusted.
-- "File Explorer" buttons are restyled and reverted back to their original position.
-- Drag-Handler position are adjusted, you can now easily find their position by hovering just at the edges of the main/middle pane.
-- Highlighted text in dark mode from the search result is now more readable.
-- Background issue in Translucent Mode is now fixed.
-- Mobile fixes:
-   - Note title and buttons are adjusted.
-   - Side margins beside the main note are removed.
-   - Setting menu size is adjusted.
-   - Ribbon buttons are no longer hidden by default.
-   - Fixed weird bottom margin on the whole screen.
-   - Applied padding in the main note.
+```
+cssclass: mado-timeline
+```
 
-v0.1.0
-- Release!
+Centers all of your element in the note! Not only that, using `<h1>` will form a huge space above it, while using `<h2>` will form a separator (a vertical `<hr>` or `---`) above it.
+
+</details>
+<details>
+<summary><b>Mado-Daily</b></summary>
+
+```
+cssclass: mado-daily
+```
+
+![](img/mado-daily.png)
+
+Feel like logging into a game to turn in for daily bonus? Well, now you can with this manual-stamp daily!
+You can set the reward for every 2nd and 5th day, and then start filling in with any value or emoji in the empty cells. The reward will mark as checked when the previous cell is filled in.
+Also, adding in another cssclass `mado-table` will give it a better looking, optional of course!
+
+</details>
