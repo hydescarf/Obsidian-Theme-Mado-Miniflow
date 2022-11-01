@@ -701,6 +701,10 @@ body.is-phone .view-header, .show-view-header .view-header{
 .menu-item{
 	padding:var(--button-padding-long);
 }
+body.is-translucent .menu{
+	background:var(--color-base-00);
+}
+
 
 
 /* Hide status bar */
@@ -751,6 +755,13 @@ body.toggle-sync-button.toggle-status-bar .status-bar-item .svg-icon{
 	border-bottom:var(--border);
 	margin-bottom:23px;
 }
+body.is-translucent .modal{
+	background:var(--color-base-00);
+}
+
+
+
+
 
 
 
@@ -1017,19 +1028,20 @@ code{
 }
 
 /* Inline code */
-.markdown-rendered :not(pre)>code{
+.markdown-rendered :not(pre)>code,
+.cm-s-obsidian span.cm-inline-code{
 	color:var(--inline-code-color);
+}
+/* inline code background */
+.cm-hmd-indented-code,
+.cm-s-obsidian span.cm-inline-code.cm-hmd-indented-code{
+	background:var(--code-background);
 }
 
 .markdown-rendered pre{
 	overflow-x: auto;
 }
 
-/* inline code background */
-.cm-hmd-indented-code,
-.cm-s-obsidian span.cm-inline-code.cm-hmd-indented-code{
-	background:var(--code-background);
-}
 
 :is(mark, .cm-s-obsidian span.cm-formatting-highlight, .cm-s-obsidian span.cm-highlight){
 	color:var(--color-highlight);
@@ -1728,6 +1740,10 @@ body:is(:not(.css-settings-manager),.toggle-explorer-collapse) .workspace-split:
 .mado-timeline .markdown-preview-sizer>div>:is(blockquote,.callout, pre, table){
 	margin-top:23px;
 }
+.mado-timeline .markdown-preview-sizer>div>hr{
+	width:70%;
+	margin-top:53px;
+}
 
 .mado-timeline .markdown-preview-sizer>div>:is(pre,table){
 	text-align:left;
@@ -1843,8 +1859,8 @@ div.callout[data-callout*="mado-panel"] ul li:hover{
 }
 
 /* adapt "a" link to whole panel so to be clickable */
-[class*="mado-panel"] .markdown-preview-sizer>div a,
-div.callout[data-callout*="mado-panel"] a{
+[class*="mado-panel"] .markdown-preview-sizer>div ul a,
+div.callout[data-callout*="mado-panel"] ul a{
 	display:flex;
 	align-items:center;
 	justify-content:center;	
