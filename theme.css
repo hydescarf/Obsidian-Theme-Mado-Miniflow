@@ -1160,6 +1160,14 @@ ul > li::marker,
 	padding-inline:33px 7px;
 }
 
+/* reduce padding of ul/ol inside callout/blockquote */
+.callout-content>:is(ul,ol){
+	padding-block:0;
+}
+blockquote>:is(ul,ol){
+	padding-block:7px;
+}
+
 
 
 /* Markdown Table */
@@ -1932,8 +1940,8 @@ div.callout[data-callout*="mado-panel-list"] li.task-list-item>input{
 	padding:12px;
 	left:0;
 }
-[class*="mado-panel-list"] .markdown-preview-sizer>div ul li:hover .list-collapse-indicator,
-div.callout[data-callout*="mado-panel-list"] li:hover .list-collapse-indicator{
+[class*="mado-panel-list"] .markdown-preview-sizer>div ul li:hover>.list-collapse-indicator,
+div.callout[data-callout*="mado-panel-list"] li:hover>.list-collapse-indicator{
 	opacity:1;
 }
 [class*="mado-panel-list"] .markdown-preview-sizer>div ul li .list-collapse-indicator,
@@ -1945,6 +1953,11 @@ div.callout[data-callout*="mado-panel-list"] li.task-list-item .list-collapse-in
 	margin-left:-77px;
 	margin-top:0;
 }
+[class*="mado-panel-list"] .markdown-preview-sizer>div li:not(.task-list-item)>ul>li.task-list-item .list-collapse-indicator,
+div.callout[data-callout*="mado-panel-list"] li:not(.task-list-item)>ul>li.task-list-item .list-collapse-indicator{
+	margin-left:-69px;
+}
+
 [class*="mado-panel-list"] .markdown-preview-sizer>div li :is(ul,ol),
 div.callout[data-callout*="mado-panel-list"] li :is(ul,ol){
 	padding-inline:0;
@@ -1959,25 +1972,63 @@ div.callout[data-callout*="mado-panel-list"] li :is(ul,ol):before{
 
 
 
-/* Mado Panel Callout Sizing */
+/* Mado Panel Sizing */
+/* small = short & short */
+/* medium = taller & longer */
+/* large = tallest & longest */
+/* short = short & longer */
+/* long = short & longest */
+[class*="mado-panel-small"] .markdown-preview-sizer>div ul li,
 div.callout[data-callout*="mado-panel-small"]>.callout-content>ul>li{
 	width:calc(100% / 4 - 10px);
+	max-width:200px;
 	height:70px;
 }
+[class*="mado-panel-medium"] .markdown-preview-sizer>div ul li,
 div.callout[data-callout*="mado-panel-medium"]>.callout-content>ul>li{
 	width:calc(100% / 3 - 9px);
+	max-width:250px;
 	height:110px;
 }
+[class*="mado-panel-large"] .markdown-preview-sizer>div ul li,
 div.callout[data-callout*="mado-panel-large"]>.callout-content>ul>li{
 	width:calc(100% / 2 - 7px);
+	max-width:300px;
 	height:130px;
 }
+[class*="mado-panel-short"] .markdown-preview-sizer>div ul li,
 div.callout[data-callout*="mado-panel-short"]>.callout-content>ul>li{
-	width:calc(100% / 2 - 7px);
+	width:calc(100% / 3 - 9px);
+	max-width:250px;
 }
+[class*="mado-panel-long"] .markdown-preview-sizer>div ul li,
+div.callout[data-callout*="mado-panel-long"]>.callout-content>ul>li{
+	width:calc(100% / 2 - 7px);
+	max-width:300px;
+}
+[class*="mado-panel-auto"] .markdown-preview-sizer>div ul li,
 div.callout[data-callout*="mado-panel"][data-callout*="-auto"]>.callout-content>ul>li{
-	width:auto;
+	max-width:unset;
+}
+[class*="mado-panel-auto"][class*="mado-panel-small"] .markdown-preview-sizer>div ul li,
+div.callout[data-callout*="mado-panel-small"][data-callout*="-auto"]>.callout-content>ul>li{
 	min-width:calc(100% / 4 - 10px);
+}
+[class*="mado-panel-auto"][class*="mado-panel-medium"] .markdown-preview-sizer>div ul li,
+div.callout[data-callout*="mado-panel-medium"][data-callout*="-auto"]>.callout-content>ul>li{
+	min-width:calc(100% / 3 - 9px);
+}
+[class*="mado-panel-auto"][class*="mado-panel-large"] .markdown-preview-sizer>div ul li,
+div.callout[data-callout*="mado-panel-large"][data-callout*="-auto"]>.callout-content>ul>li{
+	min-width:calc(100% / 2 - 7px);
+}
+[class*="mado-panel-auto"][class*="mado-panel-short"] .markdown-preview-sizer>div ul li,
+div.callout[data-callout*="mado-panel-short"][data-callout*="-auto"]>.callout-content>ul>li{
+	min-width:calc(100% / 3 - 9px);
+}
+[class*="mado-panel-auto"][class*="mado-panel-long"] .markdown-preview-sizer>div ul li,
+div.callout[data-callout*="mado-panel-long"][data-callout*="-auto"]>.callout-content>ul>li{
+	min-width:calc(100% / 2 - 7px);
 }
 
 
