@@ -1021,6 +1021,12 @@ body:is(:not(.css-settings-manager),.toggle-explorer-indent) .nav-folder.mod-roo
 a, .external-link{
 	text-decoration:none;
 }
+a, .external-link:hover{
+	text-decoration:underline;
+}
+.cm-hashtag{
+	vertical-align:unset;
+}
 
 code{
 	--code-normal:var(--blockquote-color);
@@ -1850,7 +1856,7 @@ div.callout[data-callout*="mado-panel"] ul li{
 	transition:0.1s background, 0.1s box-shadow, transform 0.1s;
 	text-align:center;
 	width:auto;
-	min-width:calc(100% / 4 - 10px);
+	/* min-width:calc(100% / 4 - 10px); */
 	flex:auto;
 	height:70px;
 	overflow:hidden;
@@ -1866,13 +1872,16 @@ div.callout[data-callout*="mado-panel"] ul li:hover{
 	box-shadow:var(--panel-shadow-hover);
 }
 
+[class*="mado-panel"] .markdown-preview-sizer>div ul a:not(:hover),
+div.callout[data-callout*="mado-panel"] ul a:not(:hover){
+	text-decoration:none;
+}
 /* adapt "a" link to whole panel so to be clickable */
-[class*="mado-panel"] .markdown-preview-sizer>div ul a,
-div.callout[data-callout*="mado-panel"] ul a{
+[class*="mado-panel-link"] .markdown-preview-sizer>div ul a:not(.tag),
+div.callout[data-callout*="mado-panel"][data-callout*="-link"] ul a:not(.tag){
 	display:flex;
 	align-items:center;
 	justify-content:center;	
-	text-decoration:none;
 	height:calc(100% + 26px);
 	width:calc(100% + 46px);
 	padding-block:13px;
@@ -1921,8 +1930,8 @@ div.callout[data-callout*="mado-panel-list"] ul li{
 	width:100%;
 	overflow:visible;
 }
-[class*="mado-panel-list"] .markdown-preview-sizer>div ul li a,
-div.callout[data-callout*="mado-panel-list"] ul li a{
+[class*="mado-panel-list"][class*="mado-panel-link"] .markdown-preview-sizer>div ul li a:not(.tag),
+div.callout[data-callout*="mado-panel-list"][data-callout*="-link"] ul li a:not(.tag){
 	height:calc(100% + 16px);
 	width:calc(100% + 46px);
 	padding-block:8px;
@@ -1940,21 +1949,35 @@ div.callout[data-callout*="mado-panel-list"] li.task-list-item>input{
 	padding:12px;
 	left:0;
 }
-[class*="mado-panel-list"] .markdown-preview-sizer>div ul li:hover>.list-collapse-indicator,
+[class*="mado-panel-list"] .markdown-preview-sizer>div li:hover>.list-collapse-indicator,
 div.callout[data-callout*="mado-panel-list"] li:hover>.list-collapse-indicator{
 	opacity:1;
 }
-[class*="mado-panel-list"] .markdown-preview-sizer>div ul li .list-collapse-indicator,
-div.callout[data-callout*="mado-panel-list"] li .list-collapse-indicator{
+
+/* the very first list */
+[class*="mado-panel-list"] .markdown-preview-sizer>div>ul>li>.list-collapse-indicator,
+div.callout[data-callout*="mado-panel-list"] .callout-content>ul>li>.list-collapse-indicator{
 	margin-left:-57px;
 }
-[class*="mado-panel-list"] .markdown-preview-sizer>div ul li.task-list-item .list-collapse-indicator,
-div.callout[data-callout*="mado-panel-list"] li.task-list-item .list-collapse-indicator{
+/* all normal list */
+[class*="mado-panel-list"] .markdown-preview-sizer>div li>.list-collapse-indicator,
+div.callout[data-callout*="mado-panel-list"] li>.list-collapse-indicator{
+	margin-left:-49px;
+}
+/* all task lisk */
+[class*="mado-panel-list"] .markdown-preview-sizer>div li.task-list-item>.list-collapse-indicator,
+div.callout[data-callout*="mado-panel-list"] li.task-list-item>.list-collapse-indicator{
 	margin-left:-77px;
 	margin-top:0;
 }
-[class*="mado-panel-list"] .markdown-preview-sizer>div li:not(.task-list-item)>ul>li.task-list-item .list-collapse-indicator,
-div.callout[data-callout*="mado-panel-list"] li:not(.task-list-item)>ul>li.task-list-item .list-collapse-indicator{
+/* normal list inside a task list */
+[class*="mado-panel-list"] .markdown-preview-sizer>div li.task-list-item li:not(.task-list-item)>.list-collapse-indicator,
+div.callout[data-callout*="mado-panel-list"] li.task-list-item li:not(.task-list-item)>.list-collapse-indicator{
+	margin-left:-57px;
+}
+/* task list inside a normal list */
+[class*="mado-panel-list"] .markdown-preview-sizer>div li:not(.task-list-item)>ul>li.task-list-item>.list-collapse-indicator,
+div.callout[data-callout*="mado-panel-list"] li:not(.task-list-item)>ul>li.task-list-item>.list-collapse-indicator{
 	margin-left:-69px;
 }
 
