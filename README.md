@@ -107,6 +107,7 @@ Options:
 mado-panel-list (long and thin size, lists can be nested)
 mado-panel-small, mado-panel-medium, mado-panel-large, mado-panel-long, mado-panel-short (define fixed-size, lists cannot be nested)
 mado-panel-auto (maintain the minimum fixed-size of above, while auto-widen based on its contents, not applicable to mado-panel-list)
+mado-panel-link (turns link into a full button. Must not mix with plain text inside a single list)
 ```
 
 Rule:
@@ -117,7 +118,7 @@ Rule:
 3. Nested list is not available except for `mado-panel-list`.
 ```
 Callout version is also available if you need only one part of the list to become panel.
-Options in callout version can be chained directly.
+Options in callout version can be chained directly. (Only `auto` and `link` are currently available to be chained)
 Example:
 
 ```
