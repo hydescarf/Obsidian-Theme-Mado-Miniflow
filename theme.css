@@ -146,6 +146,13 @@ body.toggle-tab-height{
 	--color-highlight:hsla(45, 63%, 63%, 1); /* for highlight text color */
 	--text-highlight-bg:hsla(45, 53%, 53%, 1); /* for highlight text underline color */
 }
+.theme-dark:is(.THT-background,.THT-underline-light){
+	--color-highlight:hsla(45, 53%, 13%, 1);
+}
+.theme-light:is(.THT-underline,.THT-underline-light){
+	--color-highlight:var(--color-yellow);
+	--text-highlight-bg:hsla(45, 53%, 73%, 1);
+}
 
 body.theme-daisy-blue{
 	--accent-h: 210;
@@ -268,7 +275,7 @@ body.is-frameless:not(.is-hidden-frameless).is-fullscreen{
 }
 
 /* hidden scrollbar */
-body:is(:not(.css-settings-manager),.toggle-scrollbar) ::-webkit-scrollbar-thumb{
+body:not(.is-mobile):is(:not(.css-settings-manager),.toggle-scrollbar) ::-webkit-scrollbar-thumb{
 	visibility:hidden;
 }
 body ::-webkit-scrollbar-thumb:hover{
@@ -277,17 +284,17 @@ body ::-webkit-scrollbar-thumb:hover{
 
 /* Switching overflow:auto to overlay */
 .workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container,
-body:is(:not(.css-settings-manager),.toggle-scrollbar-overlay) :is(.callout-content,.markdown-rendered pre,.markdown-source-view.mod-cm6 .math-block > mjx-container){
+body:not(.is-mobile):is(:not(.css-settings-manager),.toggle-scrollbar-overlay) :is(.callout-content,.markdown-rendered pre,.markdown-source-view.mod-cm6 .math-block > mjx-container){
 	overflow-x:overlay;
 }
-body:is(:not(.css-settings-manager),.toggle-scrollbar-overlay) :is(.cm-scroller,.workspace-leaf-content .view-content,.backlink-pane, .outgoing-link-pane,.item-list,.search-result-container.mod-global-search,.open-vault-options,.recent-vaults-list,.markdown-preview-view,.community-modal-info,.prompt-results,.suggestion,.vertical-tab-content,.pdf-scroll-container,.nav-files-container){
+body:not(.is-mobile):is(:not(.css-settings-manager),.toggle-scrollbar-overlay) :is(.cm-scroller,.workspace-leaf-content .view-content,.backlink-pane, .outgoing-link-pane,.item-list,.search-result-container.mod-global-search,.open-vault-options,.recent-vaults-list,.markdown-preview-view,.community-modal-info,.prompt-results,.suggestion,.vertical-tab-content,.pdf-scroll-container,.nav-files-container){
 	overflow-y:overlay;
 }
 /* Switching overflow:scroll to overlay */
-body:is(:not(.css-settings-manager),.toggle-scrollbar-overlay) .CodeMirror-hscrollbar{
+body:not(.is-mobile):is(:not(.css-settings-manager),.toggle-scrollbar-overlay) .CodeMirror-hscrollbar{
 	overflow-x:overlay;
 }
-body:is(:not(.css-settings-manager),.toggle-scrollbar-overlay) .CodeMirror-vscrollbar{
+body:not(.is-mobile):is(:not(.css-settings-manager),.toggle-scrollbar-overlay) .CodeMirror-vscrollbar{
 	overflow-y:overlay;
 }
 
@@ -662,8 +669,8 @@ body:not(.is-mobile).toggle-note-radius .workspace-split.mod-vertical.mod-root .
 
 
 /* Overflow to allow shadow flowing out */
-.workspace-tabs,
-.workspace-tabs .workspace-tab-container{
+body:not(.is-mobile) .workspace-tabs,
+body:not(.is-mobile) .workspace-tabs .workspace-tab-container{
     overflow:visible;
 }
 
@@ -1060,8 +1067,10 @@ code{
 :is(mark, .cm-s-obsidian span.cm-formatting-highlight, .cm-s-obsidian span.cm-highlight){
 	color:var(--color-highlight);
 }
-.theme-dark :is(mark, .cm-s-obsidian span.cm-formatting-highlight, .cm-s-obsidian span.cm-highlight),
-.theme-dark .search-result-file-matched-text{
+body.theme-dark:not(.css-settings-manager) :is(mark, .cm-s-obsidian span.cm-formatting-highlight, .cm-s-obsidian span.cm-highlight, .search-result-file-matched-text),
+body.THT-underline :is(mark, .cm-s-obsidian span.cm-formatting-highlight, .cm-s-obsidian span.cm-highlight, .search-result-file-matched-text),
+body.THT-underline-dark.theme-dark :is(mark, .cm-s-obsidian span.cm-formatting-highlight, .cm-s-obsidian span.cm-highlight, .search-result-file-matched-text),
+body.THT-underline-light.theme-light :is(mark, .cm-s-obsidian span.cm-formatting-highlight, .cm-s-obsidian span.cm-highlight, .search-result-file-matched-text){
 	border-bottom:2px solid var(--text-highlight-bg);
 	color:var(--color-highlight);
 	background:none;
@@ -2610,6 +2619,25 @@ settings:
 		default-light: '#'
 		default-dark: '#'
 	-
+		id: toggle-highlight-type
+		title: Highlight Type
+		type: class-select
+		allowEmpty: false
+        default: THT-underline-dark
+        options:
+            - 
+                label: Background-filled
+                value: THT-background
+            - 
+                label: Underlined
+                value: THT-underline
+            - 
+                label: Underlined (Light-mode only)
+                value: THT-underline-light
+            - 
+                label: Underlined (Dark-mode only)
+                value: THT-underline-dark
+	- 
 		id: color-highlight
 		title: Highlight Color (Text)
 		type: variable-themed-color
@@ -2618,8 +2646,7 @@ settings:
 		default-dark: '#'
 	-
 		id: text-highlight-bg
-		title: Highlight Color (Background)
-		description: "Note: It's underline in dark mode."
+		title: Highlight Color (Background/Underline)
 		type: variable-themed-color
 		format: hsl
 		default-light: '#'
