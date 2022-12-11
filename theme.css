@@ -1064,7 +1064,7 @@ code{
 }
 
 
-:is(mark, .cm-s-obsidian span.cm-formatting-highlight, .cm-s-obsidian span.cm-highlight){
+:is(mark, .cm-s-obsidian span.cm-formatting-highlight, .cm-s-obsidian span.cm-highlight, .search-result-file-matched-text){
 	color:var(--color-highlight);
 }
 body.theme-dark:not(.css-settings-manager) :is(mark, .cm-s-obsidian span.cm-formatting-highlight, .cm-s-obsidian span.cm-highlight, .search-result-file-matched-text),
@@ -2237,7 +2237,7 @@ div.kanban-plugin__lane-title-count{
 	margin-top:0;
 }
 .style-settings-collapse-indicator{
-	color:initial;
+	color:var(--text-normal);
 }
 .style-settings-heading+.style-settings-container+.style-settings-heading{
 	margin-top:13px;
@@ -2586,6 +2586,27 @@ settings:
         min: 400
         max: 1200
         step: 10
+	-
+		id: text-normal
+		title: Text Color
+		type: variable-themed-color
+		format: hsl
+		default-light: '#'
+		default-dark: '#'
+	-
+		id: text-muted
+		title: Muted Text Color
+		type: variable-themed-color
+		format: hsl
+		default-light: '#'
+		default-dark: '#'
+	-
+		id: text-faint
+		title: Faint Text Color
+		type: variable-themed-color
+		format: hsl
+		default-light: '#'
+		default-dark: '#'
 	-
 	
 	
