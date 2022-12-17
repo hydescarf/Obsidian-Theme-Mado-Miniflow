@@ -549,7 +549,7 @@ body.toggle-tab-height .workspace-split.mod-vertical.mod-root .workspace-tabs:no
 body.toggle-tab-design.toggle-tab-height .workspace-split.mod-vertical.mod-root .workspace-tabs .workspace-tab-header-inner{
 	padding:1px 11px;
 }
-body.toggle-tab-height .workspace-split.mod-vertical.mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header-inner{
+body.toggle-tab-height .workspace-split.mod-vertical.mod-root .workspace-tabs .workspace-tab-header-inner{
 	padding:23px 11px 17px;
 }
 body.toggle-tab-height .workspace-split svg.svg-icon{
