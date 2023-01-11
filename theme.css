@@ -287,7 +287,7 @@ body ::-webkit-scrollbar-thumb:hover{
 body:not(.is-mobile):is(:not(.css-settings-manager),.toggle-scrollbar-overlay) :is(.callout-content,.markdown-rendered pre,.markdown-source-view.mod-cm6 .math-block > mjx-container){
 	overflow-x:overlay;
 }
-body:not(.is-mobile):is(:not(.css-settings-manager),.toggle-scrollbar-overlay) :is(.cm-scroller,.workspace-leaf-content .view-content,.backlink-pane, .outgoing-link-pane,.item-list,.search-result-container.mod-global-search,.open-vault-options,.recent-vaults-list,.markdown-preview-view,.community-modal-info,.prompt-results,.suggestion,.vertical-tab-content,.pdf-scroll-container,.nav-files-container){
+body:not(.is-mobile):is(:not(.css-settings-manager),.toggle-scrollbar-overlay) :is(.cm-scroller,.workspace-leaf-content .view-content,.backlink-pane, .outgoing-link-pane,.item-list,.search-result-container.mod-global-search,.open-vault-options,.recent-vaults-list,.workspace-leaf-content .view-content:not(:has(.canvas-wrapper)) .markdown-preview-view,,.community-modal-info,.prompt-results,.suggestion,.vertical-tab-content,.pdf-scroll-container,.nav-files-container){
 	overflow-y:overlay;
 }
 /* Switching overflow:scroll to overlay */
@@ -2177,6 +2177,10 @@ div.kanban-plugin__lane-title-count{
 
 
 
+/* db folder & kanban fix */
+.workspace-split.mod-vertical.mod-root :is([data-type="database-plugin"],.kanban-plugin) .markdown-preview-view{
+	padding-inline:0;
+}
 
 
 
