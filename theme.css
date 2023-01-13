@@ -355,6 +355,7 @@ body .workspace-split.mod-vertical.mod-root .workspace-tab-header-container:hove
 body .sidebar-toggle-button:is(.mod-left, .mod-right):hover:hover,
 body .titlebar:hover:hover,
 body .workspace-split.mod-vertical.mod-root .view-header:hover,
+body.toggle-note-header .workspace-split.mod-vertical.mod-root .view-header:focus-within,
 body.is-grabbing.is-grabbing .app-container:not(.no-transition) .workspace-split .workspace-tabs .workspace-tab-header-container .workspace-tab-header-container-inner,
 body.is-grabbing.is-grabbing.is-grabbing.is-grabbing.is-grabbing .app-container:not(.no-transition) .workspace-split .workspace-tabs .workspace-tab-header-container{
 	opacity:1;
