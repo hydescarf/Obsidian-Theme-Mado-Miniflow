@@ -1638,6 +1638,9 @@ ul > li.task-list-item.is-checked *,
 
 /* Mado List2Table */
 
+div.callout[data-callout="mado-list2table"]{
+	background:none;
+}
 div.callout[data-callout="mado-list2table"] .callout-title,
 div.callout[data-callout="mado-list2table"] .callout-content:before,
 div.callout[data-callout="mado-list2table"] .callout-content>ul :is(.list-bullet,.collapse-indicator),
