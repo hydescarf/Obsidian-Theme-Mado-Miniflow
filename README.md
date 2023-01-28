@@ -153,3 +153,24 @@ You can set the reward for every 2nd and 5th day, and then start filling in with
 Also, adding in another cssclass `mado-table` will give it a better looking, optional of course!
 
 </details>
+<details>
+<summary><b>Mado-Table-Check-&-List2Table</b></summary>
+
+![](img/mado-table-check.png)
+
+```
+cssclass: mado-table-check
+```
+
+Stamp a checkmark by manually using "strikethrough" (`~~~~`/`<del></del>`) inside the block, either on the value or beside the value!
+
+```
+> [!mado-list2table]
+> - Title
+>   - [ ] Checkboxes
+>   - [ ] Checkboxes
+```
+
+Don't like manually stamping? Then try out callout `mado-list2table`! By turning a list of checklists into a pseudo-table, you can now mark a check on the block by directly clicking onto it!
+
+</details>
