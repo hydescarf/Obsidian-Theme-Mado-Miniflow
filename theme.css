@@ -235,6 +235,10 @@ body.theme-grayscale.theme-dark{
 	--accent-l: 63%;
 }
 
+body.toggle-tab-height-stacked{
+	--tab-stacked-header-width:33px;
+}
+
 
 
 
@@ -355,6 +359,7 @@ body .workspace-split.mod-vertical.mod-root .workspace-tab-header-container:hove
 body .sidebar-toggle-button:is(.mod-left, .mod-right):hover:hover,
 body .titlebar:hover:hover,
 body .workspace-split.mod-vertical.mod-root .view-header:hover,
+body.toggle-note-header .workspace-split.mod-vertical.mod-root .view-header:focus-within,
 body.is-grabbing.is-grabbing .app-container:not(.no-transition) .workspace-split .workspace-tabs .workspace-tab-header-container .workspace-tab-header-container-inner,
 body.is-grabbing.is-grabbing.is-grabbing.is-grabbing.is-grabbing .app-container:not(.no-transition) .workspace-split .workspace-tabs .workspace-tab-header-container{
 	opacity:1;
@@ -1589,6 +1594,124 @@ ul > li.task-list-item.is-checked *,
 }
 
 
+/* Mado Table Check */
+
+.mado-table-check td:has(del){
+	position:relative;
+	/* display:flex; */
+    align-items:center;
+    justify-content:center;
+	z-index:0;
+}
+.mado-table-check td:has(del):before{
+	background:var(--background-primary);
+	z-index:-1;
+	position:absolute;
+	left:0;
+	top:0;
+	content:"";
+	width:100%;
+	height:100%;
+}
+.mado-table-check td:has(del):after{
+	position:absolute;
+	left:50%;
+	top:50%;
+	content:"";
+	width:50px;
+	height:50px;
+	transform:translate(-50%, -50%);
+	opacity:0.3;
+	background-color:MediumSeaGreen;
+    -webkit-mask-size:83%;
+    -webkit-mask-position:53%;
+	-webkit-mask-repeat:no-repeat;
+    -webkit-mask-image:url('data:image/svg+xml; utf8, <svg width="12px" height="10px" viewBox="0 0 12 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-4.000000, -6.000000)" fill="%23000000"><path d="M8.1043257,14.0367999 L4.52468714,10.5420499 C4.32525014,10.3497722 4.32525014,10.0368095 4.52468714,9.8424863 L5.24777413,9.1439454 C5.44721114,8.95166768 5.77142411,8.95166768 5.97086112,9.1439454 L8.46638057,11.5903727 L14.0291389,6.1442083 C14.2285759,5.95193057 14.5527889,5.95193057 14.7522259,6.1442083 L15.4753129,6.84377194 C15.6747499,7.03604967 15.6747499,7.35003511 15.4753129,7.54129009 L8.82741268,14.0367999 C8.62797568,14.2290777 8.3037627,14.2290777 8.1043257,14.0367999"></path></g></g></svg>');
+}
+
+
+
+
+
+
+
+
+/* Mado List2Table */
+
+div.callout[data-callout="mado-list2table"] .callout-title,
+div.callout[data-callout="mado-list2table"] .callout-content:before,
+div.callout[data-callout="mado-list2table"] .callout-content>ul :is(.list-bullet,.collapse-indicator),
+div.callout[data-callout="mado-list2table"] .callout-content>ul .contains-task-list:before{
+	display:none;
+}
+div.callout[data-callout="mado-list2table"] .callout-content{
+	padding:0;
+}
+div.callout[data-callout="mado-list2table"] .callout-content>ul{
+	display:flex;
+	flex-direction:column;
+	min-width:max-content;
+	height:auto;
+	padding:0;
+}
+div.callout[data-callout="mado-list2table"] .callout-content>ul>li{
+	display:flex;
+	flex-direction:row;
+	gap:7px;
+	align-items:center;
+}
+div.callout[data-callout="mado-list2table"] .callout-content>ul>li>ul{
+	display:flex;
+	flex-direction:row;
+	gap:3px;
+	padding:0;
+}
+div.callout[data-callout="mado-list2table"] .callout-content>ul>li>ul>li{
+	position:relative;
+	height:53px;
+	min-width:53px;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	padding:11px;
+	overflow:hidden;
+}
+div.callout[data-callout="mado-list2table"] .callout-content>ul>li>ul>li>*{
+	position:absolute;
+	left:0;
+	top:0;
+}
+div.callout[data-callout="mado-list2table"] .callout-content>ul>li>ul>li .task-list-item-checkbox{
+	margin:0;
+	padding:0;
+	height:100%;
+	width:100%;
+}
+div.callout[data-callout="mado-list2table"] .callout-content>ul>li>ul>li.is-checked{
+	text-decoration:none;
+	opacity:0.4;
+}
+div.callout[data-callout="mado-list2table"] .callout-content>ul>li>ul>li .task-list-item-checkbox:checked{
+	background:none;
+	z-index:10;
+}
+div.callout[data-callout="mado-list2table"] .callout-content>ul>li>ul>li .task-list-item-checkbox:checked:after{
+	left:50%;
+	top:50%;
+	transform:translate(-50%, -50%);
+	width:40px;
+	height:40px;
+	opacity:0.4;
+	background-color:MediumSeaGreen;
+    -webkit-mask-size:83%;
+    -webkit-mask-position:53%;
+	-webkit-mask-repeat:no-repeat;
+    -webkit-mask-image:url('data:image/svg+xml; utf8, <svg width="12px" height="10px" viewBox="0 0 12 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-4.000000, -6.000000)" fill="%23000000"><path d="M8.1043257,14.0367999 L4.52468714,10.5420499 C4.32525014,10.3497722 4.32525014,10.0368095 4.52468714,9.8424863 L5.24777413,9.1439454 C5.44721114,8.95166768 5.77142411,8.95166768 5.97086112,9.1439454 L8.46638057,11.5903727 L14.0291389,6.1442083 C14.2285759,5.95193057 14.5527889,5.95193057 14.7522259,6.1442083 L15.4753129,6.84377194 C15.6747499,7.03604967 15.6747499,7.35003511 15.4753129,7.54129009 L8.82741268,14.0367999 C8.62797568,14.2290777 8.3037627,14.2290777 8.1043257,14.0367999"></path></g></g></svg>');
+}
+
+
+
+
 
 
 
@@ -1613,7 +1736,7 @@ ul > li.task-list-item.is-checked *,
 	padding:0!important;
 }
 .workspace-split:not(.mod-root) .workspace-tabs .markdown-preview-view.mado-explorer{
-	padding:0px var(--size-4-3) var(--size-4-6) var(--size-4-3)!important;
+	padding:var(--size-4-6) var(--size-4-3)!important;
 }
 .workspace-split:not(.mod-root) .workspace-tabs .markdown-preview-view.mado-explorer .markdown-preview-sizer p,
 .workspace-split:not(.mod-root) .workspace-tabs .markdown-preview-view.mado-explorer .markdown-preview-sizer ul,
@@ -1673,19 +1796,17 @@ body.css-settings-manager:not(.toggle-explorer-collapse) .workspace-split:not(.m
 body.css-settings-manager:not(.toggle-explorer-collapse) .workspace-split:not(.mod-root) .workspace-tabs .markdown-preview-view.mado-explorer .collapse-indicator svg{
 	position:absolute;
 	left:15px;
-	top:11px;
+	top:16px;
 }
-
 
 /* hide frontmatter, collapse icon, heading without value and linebreak */
 .workspace-split:not(.mod-root) .workspace-tabs .markdown-preview-view.mado-explorer .frontmatter,
-body:is(:not(.css-settings-manager),.toggle-explorer-collapse) .workspace-split:not(.mod-root) .workspace-tabs .markdown-preview-view.mado-explorer .collapse-indicator svg,
+body:is(:not(.css-settings-manager),.toggle-explorer-collapse) .workspace-tabs .markdown-preview-view.mado-explorer .collapse-indicator svg,
 .workspace-split:not(.mod-root) .workspace-tabs .markdown-preview-view.mado-explorer .list-bullet,
 .workspace-split:not(.mod-root) .workspace-tabs .markdown-preview-view.mado-explorer .markdown-preview-sizer h1[data-heading=""],
 .workspace-split:not(.mod-root) .workspace-tabs .markdown-preview-view.mado-explorer .markdown-preview-sizer p br{
 	display:none;
 }
-
 
 .workspace-split:not(.mod-root) .workspace-tabs .markdown-preview-view.mado-explorer a:hover,
 .workspace-split:not(.mod-root) .workspace-tabs .markdown-preview-view.mado-explorer li:hover,
@@ -1905,6 +2026,7 @@ div.callout[data-callout*="mado-panel"][data-callout*="-link"] ul a:not(.tag){
 	padding-inline:23px;
 	margin-block:-13px;
 	margin-inline:-23px;
+	text-decoration:none;
 }
 [class*="mado-panel"] .markdown-preview-sizer>div li.task-list-item,
 div.callout[data-callout*="mado-panel"] ul li.task-list-item{
@@ -2040,11 +2162,13 @@ div.callout[data-callout*="mado-panel-large"]>.callout-content>ul>li{
 div.callout[data-callout*="mado-panel-short"]>.callout-content>ul>li{
 	width:calc(100% / 3 - 9px);
 	max-width:250px;
+	height:70px;
 }
 [class*="mado-panel-long"] .markdown-preview-sizer>div ul li,
 div.callout[data-callout*="mado-panel-long"]>.callout-content>ul>li{
 	width:calc(100% / 2 - 7px);
 	max-width:300px;
+	height:70px;
 }
 [class*="mado-panel-auto"] .markdown-preview-sizer>div ul li,
 div.callout[data-callout*="mado-panel"][data-callout*="-auto"]>.callout-content>ul>li{
@@ -2434,6 +2558,12 @@ settings:
 	
 		id: toggle-tab-height
 		title: Enable Compact Tab Header
+		type: class-toggle
+		default: false
+	- 
+		id: toggle-tab-height-stacked
+		title: Enable Compact Tab Header (Stacked)
+		description: If you noticed a broken gap after the toggle, just refresh it by clicking on the panes (so that they can readjust themselves).
 		type: class-toggle
 		default: false
 	- 
