@@ -154,7 +154,7 @@ Also, adding in another cssclass `mado-table` will give it a better looking, opt
 
 </details>
 <details>
-<summary><b>Mado-Table-Check-&-List2Table</b></summary>
+<summary><b>Mado-Table-Check & List2Table</b></summary>
 
 ![](img/mado-table-check.png)
 
