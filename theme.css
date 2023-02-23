@@ -2127,6 +2127,11 @@ div.callout[data-callout*="mado-panel-list"] ul li.task-list-item>.list-collapse
 	margin-left:-77px;
 	margin-top:0;
 }
+/* rightbox task lisk */
+[class*="mado-panel-list-rightbox"] .markdown-preview-sizer>div li.task-list-item>.list-collapse-indicator,
+div.callout[data-callout*="mado-panel-list"][data-callout*="-rightbox"] ul li.task-list-item>.list-collapse-indicator{
+	margin-left:-49px;
+}
 /* normal list inside a task list */
 [class*="mado-panel-list"] .markdown-preview-sizer>div li.task-list-item li:not(.task-list-item)>.list-collapse-indicator,
 div.callout[data-callout*="mado-panel-list"] ul li.task-list-item li:not(.task-list-item)>.list-collapse-indicator{
