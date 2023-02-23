@@ -1971,6 +1971,10 @@ div.callout[data-callout*="mado-panel"] .callout-content:before{
 }
 
 
+[class*="mado-panel"] .markdown-preview-sizer>div ul.has-list-bullet:before,
+div.callout[data-callout*="mado-panel"] ul.has-list-bullet:before{
+	display:none;
+}
 
 [class*="mado-panel"] .markdown-preview-sizer>div ul,
 div.callout[data-callout*="mado-panel"] ul{
@@ -1999,16 +2003,17 @@ div.callout[data-callout*="mado-panel"] ul li{
 	width:auto;
 	/* min-width:calc(100% / 4 - 10px); */
 	flex:auto;
-	height:70px;
+	min-height:70px;
 	overflow:hidden;
 }
 
 [class*="mado-panel"] .markdown-preview-sizer>div ul li .list-bullet{
 	display:none;
 }
-[class*="mado-panel"] .markdown-preview-sizer>div ul li:hover,
-div.callout[data-callout*="mado-panel"] ul li:hover{
-	background:var(--background-fifth);
+[class*="mado-panel"] .markdown-preview-sizer>div ul li:hover:not(:has(li:hover)),
+div.callout[data-callout*="mado-panel"] ul li:hover:not(:has(li:hover)){
+	/* background:var(--background-fifth); */
+	background:var(--background-primary);
 	transform:translateY(-3px);
 	box-shadow:var(--panel-shadow-hover);
 }
