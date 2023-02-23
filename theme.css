@@ -282,7 +282,7 @@ body.is-frameless:not(.is-hidden-frameless).is-fullscreen{
 body:not(.is-mobile):is(:not(.css-settings-manager),.toggle-scrollbar) ::-webkit-scrollbar-thumb{
 	visibility:hidden;
 }
-body ::-webkit-scrollbar-thumb:hover{
+body ::-webkit-scrollbar-thumb:hover:hover{
 	visibility:initial;
 }
 
@@ -2083,18 +2083,28 @@ div.callout[data-callout*="mado-panel-list"][data-callout*="-link"] ul li a:not(
 }
 
 [class*="mado-panel-list"] .markdown-preview-sizer>div li.task-list-item,
-div.callout[data-callout*="mado-panel-list"] li.task-list-item{
+div.callout[data-callout*="mado-panel-list"] ul li.task-list-item{
 	padding-inline:43px 23px;
 }
 [class*="mado-panel-list"] .markdown-preview-sizer>div li.task-list-item>input,
-div.callout[data-callout*="mado-panel-list"] li.task-list-item>input{
+div.callout[data-callout*="mado-panel-list"] ul li.task-list-item>input{
 	padding:12px;
 	left:0;
 }
 [class*="mado-panel-list"] .markdown-preview-sizer>div li:hover>.list-collapse-indicator,
-div.callout[data-callout*="mado-panel-list"] li:hover>.list-collapse-indicator{
+div.callout[data-callout*="mado-panel-list"] ul li:hover>.list-collapse-indicator{
 	opacity:1;
 }
+
+[class*="mado-panel-list-rightbox"] .markdown-preview-sizer>div li.task-list-item,
+div.callout[data-callout*="mado-panel-list-rightbox"] ul li.task-list-item{
+	padding-inline:23px;
+}
+[class*="mado-panel-list-rightbox"] .markdown-preview-sizer>div li.task-list-item>input,
+div.callout[data-callout*="mado-panel-list"][data-callout*="-rightbox"] ul li.task-list-item>input{
+	left:unset;
+}
+
 
 /* the very first list */
 [class*="mado-panel-list"] .markdown-preview-sizer>div>ul>li>.list-collapse-indicator,
@@ -2103,34 +2113,34 @@ div.callout[data-callout*="mado-panel-list"] .callout-content>ul>li>.list-collap
 }
 /* all normal list */
 [class*="mado-panel-list"] .markdown-preview-sizer>div li>.list-collapse-indicator,
-div.callout[data-callout*="mado-panel-list"] li>.list-collapse-indicator{
+div.callout[data-callout*="mado-panel-list"] ul li>.list-collapse-indicator{
 	margin-left:-49px;
 }
 /* all task lisk */
 [class*="mado-panel-list"] .markdown-preview-sizer>div li.task-list-item>.list-collapse-indicator,
-div.callout[data-callout*="mado-panel-list"] li.task-list-item>.list-collapse-indicator{
+div.callout[data-callout*="mado-panel-list"] ul li.task-list-item>.list-collapse-indicator{
 	margin-left:-77px;
 	margin-top:0;
 }
 /* normal list inside a task list */
 [class*="mado-panel-list"] .markdown-preview-sizer>div li.task-list-item li:not(.task-list-item)>.list-collapse-indicator,
-div.callout[data-callout*="mado-panel-list"] li.task-list-item li:not(.task-list-item)>.list-collapse-indicator{
+div.callout[data-callout*="mado-panel-list"] ul li.task-list-item li:not(.task-list-item)>.list-collapse-indicator{
 	margin-left:-57px;
 }
 /* task list inside a normal list */
 [class*="mado-panel-list"] .markdown-preview-sizer>div li:not(.task-list-item)>ul>li.task-list-item>.list-collapse-indicator,
-div.callout[data-callout*="mado-panel-list"] li:not(.task-list-item)>ul>li.task-list-item>.list-collapse-indicator{
+div.callout[data-callout*="mado-panel-list"] ul li:not(.task-list-item)>ul>li.task-list-item>.list-collapse-indicator{
 	margin-left:-69px;
 }
 
 [class*="mado-panel-list"] .markdown-preview-sizer>div li :is(ul,ol),
-div.callout[data-callout*="mado-panel-list"] li :is(ul,ol){
+div.callout[data-callout*="mado-panel-list"] ul li :is(ul,ol){
 	padding-inline:0;
 }
 [class*="mado-panel-list"] .markdown-preview-sizer>div li.is-collapsed>:is(ul,ol),
 [class*="mado-panel-list"] .markdown-preview-sizer>div li :is(ul,ol):before,
-div.callout[data-callout*="mado-panel-list"] li.is-collapsed>:is(ul,ol),
-div.callout[data-callout*="mado-panel-list"] li :is(ul,ol):before{
+div.callout[data-callout*="mado-panel-list"] ul li.is-collapsed>:is(ul,ol),
+div.callout[data-callout*="mado-panel-list"] ul li :is(ul,ol):before{
 	display:none;
 }
 
