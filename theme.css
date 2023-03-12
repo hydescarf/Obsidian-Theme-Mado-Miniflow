@@ -1151,10 +1151,6 @@ input[type=checkbox]:checked:after{
 /* Markdown Listings */
 ul, ol{
 	padding:7px 0 13px;
-	margin-top:7px;
-}
-ul ul, ol ol{
-	margin-top:0;
 }
 
 /* Only append indent if it's from a list */
