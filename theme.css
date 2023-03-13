@@ -1167,10 +1167,7 @@ ul, ol{
 	padding-top:11px!important;
 }
 
-/* Adjust line position to fit below bullet point (preview) */
-.markdown-rendered.show-indentation-guide li > :is(ul, ol):before{ 
-	left:-12px;
-}
+
 /* Collapse indicator position adjustment */
 .markdown-source-view.mod-cm6 .cm-line:not(.cm-active):not(.HyperMD-header):not(.HyperMD-task-line) .cm-fold-indicator .collapse-indicator{
 	padding-right:23px;
