@@ -94,9 +94,9 @@ body.toggle-tab-height{
 	
 	--color-base-00-trans:hsla(calc(var(--bgcolor-h) - 0), calc(var(--bgcolor-s) - 0%), calc(var(--bgcolor-l) - 0%), 0.5); /*for transparency background*/
 	--color-base-20-trans:hsla(calc(var(--bgcolor-h) + 6), calc(var(--bgcolor-s) - 8%), calc(var(--bgcolor-l) - 1%), 0.5);
-	--color-base-00-0:hsla(calc(var(--bgcolor-h) - 60), calc(var(--bgcolor-s) - 12%), calc(var(--bgcolor-l) + 4%), 1); /* very white */
-	--color-base-20-0:hsla(calc(var(--bgcolor-h) - 33), calc(var(--bgcolor-s) - 35%), calc(var(--bgcolor-l) - 5%), 0.1); /* hovered version for above */
-	--color-base-00-0-trans:hsla(calc(var(--bgcolor-h) - 60), calc(var(--bgcolor-s) - 12%), calc(var(--bgcolor-l) + 4%), 0.5);
+	--color-base-00-0:hsla(calc(var(--bgcolor-h) - 0), calc(var(--bgcolor-s) - 12%), calc(var(--bgcolor-l) + 4%), 1); /* very white */
+	--color-base-20-0:hsla(calc(var(--bgcolor-h) + 0), calc(var(--bgcolor-s) - 35%), calc(var(--bgcolor-l) - 5%), 0.1); /* hovered version for above */
+	--color-base-00-0-trans:hsla(calc(var(--bgcolor-h) - 0), calc(var(--bgcolor-s) - 12%), calc(var(--bgcolor-l) + 4%), 0.5);
 	--color-base-shadow:hsla(212, 17%, 80%, 0.2); /* shadow */
 	--color-base-shadow-hover:hsla(212, 17%, 80%, 0.3); /* shadow hover*/
 	--color-base-hover:var(--color-base-shadow-hover); /* hover*/
@@ -130,9 +130,9 @@ body.toggle-tab-height{
 	
 	--color-base-00-trans:hsla(calc(var(--bgcolor-h) - 0), calc(var(--bgcolor-s) - 0%), calc(var(--bgcolor-l) - 0%), 0.5); /*for transparency background*/
 	--color-base-20-trans:hsla(calc(var(--bgcolor-h) - 1), calc(var(--bgcolor-s) + 7%), calc(var(--bgcolor-l) - 4%), 0.5);
-	--color-base-00-0:hsla(calc(var(--bgcolor-h) - 3), calc(var(--bgcolor-s) - 0%), calc(var(--bgcolor-l) + 3%), 0.9); /* very white */
-	--color-base-20-0:hsla(calc(var(--bgcolor-h) - 8), calc(var(--bgcolor-s) - 7%), calc(var(--bgcolor-l) - 9%), 0.1); /* hovered version for above */
-	--color-base-00-0-trans:hsla(calc(var(--bgcolor-h) - 3), calc(var(--bgcolor-s) - 0%), calc(var(--bgcolor-l) + 3%), 0.5);
+	--color-base-00-0:hsla(calc(var(--bgcolor-h) - 0), calc(var(--bgcolor-s) - 0%), calc(var(--bgcolor-l) + 3%), 0.9); /* very white */
+	--color-base-20-0:hsla(calc(var(--bgcolor-h) - 0), calc(var(--bgcolor-s) - 7%), calc(var(--bgcolor-l) - 9%), 0.1); /* hovered version for above */
+	--color-base-00-0-trans:hsla(calc(var(--bgcolor-h) - 0), calc(var(--bgcolor-s) - 0%), calc(var(--bgcolor-l) + 3%), 0.5);
 	--color-base-shadow:hsla(207, 10%, 10%, 0.1); /* shadow */
 	--color-base-shadow-hover:hsla(212, 17%, 0%, 0.3); /* shadow hover*/
 	--color-base-hover:var(--color-base-05); /* hover*/
