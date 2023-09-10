@@ -16,6 +16,7 @@ Recommended fonts for this theme:
 ![](img/stylesettings.png)
 
 - Customizable theme colours, basic layout modifying, element hide-&-unhiding, and some basic markdown styling.
+- To use, you need to install a community plugin called [Style Settings](https://github.com/mgmeyers/obsidian-style-settings).
 
 
 ## Mado CSS Classes For Fun!
