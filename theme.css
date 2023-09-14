@@ -1314,6 +1314,15 @@ ul > li.task-list-item.is-checked *,
 
 
 
+/* canvas text blurry fix */
+.is-focused .canvas-node-content.markdown-embed > .markdown-embed-content > .markdown-preview-view {
+  transform: unset;
+}
+
+
+
+
+
 
 
 
