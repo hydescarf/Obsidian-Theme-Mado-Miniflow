@@ -960,6 +960,11 @@ body:not(.native-scrollbars) .modal-close-button{
 --------------------------- --------------------------- 
 --------------------------- --------------------------- 
 */
+/* Append some spaces so that when on-focused, the border does not get cut */
+.nav-files-container{
+	padding-top:2px;
+}
+
 
 :is(.nav-folder, .nav-file) :is(.nav-folder-title, .nav-file-title),
 .vertical-tab-nav-item,
