@@ -815,7 +815,7 @@ body.is-translucent .modal{
 	100% { transform:scale(100%); opacity:1; }
 }
 
-body:is(:not(.css-settings-manager), .toggle-note-animation) .workspace-split.mod-vertical.mod-root .workspace-tabs:not(.mod-stacked)  .view-content{
+body:is(:not(.css-settings-manager), .toggle-note-animation) .workspace-split.mod-vertical.mod-root .workspace-tabs:not(.mod-stacked) .workspace-leaf-content:not([data-type="pdf"]) .view-content{
 	animation:0.2s slide-up forwards;
 }
 @keyframes slide-up{
