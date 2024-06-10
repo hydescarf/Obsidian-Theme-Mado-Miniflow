@@ -1,4 +1,12 @@
 # Obsidian Theme - Mado Miniflow
+
+---  
+
+**_NOTE: This theme is now on maintenance mode and won't be updated in the future.  
+You may check out [this issue](https://github.com/hydescarf/Obsidian-Theme-Mado-11/issues/21) for possible css snippet fixes past Obsidian v16.0._**  
+
+---  
+
 Mado Miniflow is a minimalism [Obsidian](https://obsidian.md/) theme, derived from the theme [Mado-11](https://github.com/hydescarf/Obsidian-Theme-Mado-11) and is inspired by the app design of [Doctave](https://www.doctave.com/).
 The wave design in the background is made with https://www.shapedivider.app/
 
