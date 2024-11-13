@@ -87,16 +87,16 @@ body.toggle-tab-height{
 .is-mobile.theme-light,
 .is-tablet.theme-light{
 	--color-base-00:hsla(calc(var(--bgcolor-h) - 0), calc(var(--bgcolor-s) - 0%), calc(var(--bgcolor-l) - 0%), 1);
-	--color-base-10:hsla(calc(var(--bgcolor-h) + 6), calc(var(--bgcolor-s) - 8%), calc(var(--bgcolor-l) - 1%), 1);
+	--color-base-10:hsla(calc(var(--bgcolor-h) + 6), calc(var(--bgcolor-s) - 6%), calc(var(--bgcolor-l) - 4%), 1);
 	
-	--color-base-05:hsla(calc(var(--bgcolor-h) + 3), calc(var(--bgcolor-s) - 28%), calc(var(--bgcolor-l) - 5%), 1);
-	--color-base-20:hsla(calc(var(--bgcolor-h) + 6), calc(var(--bgcolor-s) - 0%), calc(var(--bgcolor-l) - 0%), 1);
+	--color-base-05:hsla(calc(var(--bgcolor-h) + 3), calc(var(--bgcolor-s) - 28%), calc(var(--bgcolor-l) - 7%), 1);
+	--color-base-20:hsla(calc(var(--bgcolor-h) + 9), calc(var(--bgcolor-s) - 0%), calc(var(--bgcolor-l) - 2%), 1);
 	
 	--color-base-00-trans:hsla(calc(var(--bgcolor-h) - 0), calc(var(--bgcolor-s) - 0%), calc(var(--bgcolor-l) - 0%), 0.5); /*for transparency background*/
-	--color-base-20-trans:hsla(calc(var(--bgcolor-h) + 6), calc(var(--bgcolor-s) - 8%), calc(var(--bgcolor-l) - 1%), 0.5);
-	--color-base-00-0:hsla(calc(var(--bgcolor-h) - 0), calc(var(--bgcolor-s) - 12%), calc(var(--bgcolor-l) + 4%), 1); /* very white */
-	--color-base-20-0:hsla(calc(var(--bgcolor-h) + 0), calc(var(--bgcolor-s) - 35%), calc(var(--bgcolor-l) - 5%), 0.1); /* hovered version for above */
-	--color-base-00-0-trans:hsla(calc(var(--bgcolor-h) - 0), calc(var(--bgcolor-s) - 12%), calc(var(--bgcolor-l) + 4%), 0.5);
+	--color-base-20-trans:hsla(calc(var(--bgcolor-h) + 6), calc(var(--bgcolor-s) - 8%), calc(var(--bgcolor-l) - 2%), 0.5);
+	--color-base-00-0:hsla(calc(var(--bgcolor-h) - 27), calc(var(--bgcolor-s) - 12%), calc(var(--bgcolor-l) + 2%), 1); /* very white */
+	--color-base-20-0:hsla(calc(var(--bgcolor-h) + 3), calc(var(--bgcolor-s) - 27%), calc(var(--bgcolor-l) - 7%), 0.1); /* hovered version for above */
+	--color-base-00-0-trans:hsla(calc(var(--bgcolor-h) - 20), calc(var(--bgcolor-s) - 12%), calc(var(--bgcolor-l) + 2%), 0.5);
 	--color-base-shadow:hsla(212, 17%, 80%, 0.2); /* shadow */
 	--color-base-shadow-hover:hsla(212, 17%, 80%, 0.3); /* shadow hover*/
 	--color-base-hover:var(--color-base-shadow-hover); /* hover*/
@@ -315,9 +315,12 @@ body:not(.is-mobile):is(:not(.css-settings-manager),.toggle-scrollbar-overlay) .
 .workspace,
 .workspace-tabs .workspace-leaf,
 .workspace-ribbon,
+.workspace-split,
+.workspace-split .view-content,
 .workspace-split.mod-root,
-.workspace-tab-header-container,
-.workspace-split.mod-root .view-content{ /* remove background as parent will be the one to have it instead */
+body.is-hidden-frameless:not(.is-fullscreen):is(.is-focused,) .titlebar-button-container:is(.mod-right,.mod-left),
+.workspace-tab-header-container{ /* remove background as parent will be the one to have it instead */
+	background-color:initial;
 	background:none;
 }
 
@@ -444,6 +447,25 @@ body:is(:not(.css-settings-manager),.toggle-vault-title) .nav-folder-title[data-
 	margin-bottom:23px;
 }
 
+
+/* Vault hidden by default, and show up when hovered at the very bottom part of the sidebar */
+body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile{
+	margin-bottom:-40px!important;
+	opacity:0;
+	transition:margin 0.2s, opacity 0.1s;
+	padding:5px;
+	width: calc(100% + 23px)!important;
+}
+body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile:hover{
+	margin-bottom:0!important;
+	opacity:1;
+}
+body:not(.is-mobile) .workspace-split.mod-left-split .workspace-drawer-vault-switcher{
+	padding:0;
+}
+body:not(.is-mobile) .workspace-split.mod-left-split .workspace-drawer-vault-switcher-icon{
+	padding:7px 3px 7px 7px;
+}
 
 
 
@@ -1009,21 +1031,21 @@ button{
 	font-size:0.95em;
 	font-weight:500;
 }
-body:is(:not(.css-settings-manager),.toggle-explorer-collapse) .nav-folder-title .nav-folder-collapse-indicator.collapse-icon{
+body:is(:not(.css-settings-manager),.toggle-explorer-collapse) .nav-folder-title .collapse-icon{
 	display:none;
 }
-body:not(.is-grabbing) .nav-folder-title:hover{
+body:not(.is-grabbing) .tree-item-self.is-clickable.nav-folder-title:hover{
 	color:var(--color-accent-2);
 	font-weight:500;
 }
 /* Additional padding inside folder, also remove border-left as indentation-guide */
-.nav-folder.mod-root .nav-folder > .nav-folder-children{
+.nav-folder > .nav-folder-children{
 	padding-block:7px;
 	padding-left:13px;
 	margin-left:20px;
 }
-body:is(:not(.css-settings-manager),.toggle-explorer-indent) .nav-folder.mod-root .nav-folder > .nav-folder-children{
-	border-left:none;
+body:is(:not(.css-settings-manager),.toggle-explorer-indent) .nav-folder > .nav-folder-children{
+	border-inline-start:none;
 	padding-left:33px;
 	margin-left:0;
 }
@@ -1158,8 +1180,13 @@ input[type=checkbox]:checked:after{
 	left:-10px;
 }
 /* Collapse indicator position adjustment */
-.markdown-source-view.mod-cm6 .HyperMD-task-line .cm-fold-indicator .collapse-indicator{
+.markdown-source-view.mod-cm6 .cm-line:not(.cm-active):not(.HyperMD-header):not(.HyperMD-task-line) .cm-fold-indicator .collapse-indicator,
+.markdown-source-view.mod-cm6 .cm-line:hover .cm-fold-indicator .collapse-indicator, .markdown-source-view.mod-cm6 .cm-fold-indicator.is-collapsed .collapse-indicator{
 	padding-right:15px;
+}
+/* fix spacing for collapse icon on task-list */
+.markdown-source-view.mod-cm6.is-live-preview .cm-line.HyperMD-list-line .cm-fold-indicator .collapse-indicator{
+	padding-inline-end:15px;
 }
 .markdown-rendered .task-list-item .list-collapse-indicator{
 	margin-top:5px;
@@ -1203,7 +1230,7 @@ ul > li::marker,
 	padding-inline:0;
 }
 .markdown-preview-sizer>div>:is(ul, ol){
-	padding-inline:33px 7px;
+	padding-inline:7px;
 }
 
 /* reduce padding of ul/ol inside callout/blockquote */
@@ -1212,6 +1239,11 @@ ul > li::marker,
 }
 blockquote>:is(ul,ol){
 	padding-block:7px;
+}
+
+/* force break word for links */
+.markdown-preview-sizer>div ul li a:not(.tag), div.callout ul li a:not(.tag){
+	word-break:break-all;
 }
 
 
@@ -1983,26 +2015,30 @@ body:is(:not(.css-settings-manager),.toggle-explorer-collapse) .workspace-tabs .
 	display:none;
 }
 
-.mado-timeline .markdown-preview-sizer>div>h1{
-	font-size:2rem;
-	margin-block:133px 11px;
+.mado-timeline .markdown-preview-sizer>div>h1{\
+	margin-block:100px 11px;
+	color:var(--color-accent);
+	font-size:36px;
 }
 .mado-timeline .markdown-preview-sizer>div>h2{
 	font-size:1.7rem;
-	margin-block:33px -13px;
 	position:relative;
 	padding-top:13px;
+	margin-block:33px var(--p-spacing);
+}
+.mado-timeline .markdown-preview-sizer>div:has(>h2)+div>*:not(h2){
+	margin-top:-13px;
 }
 .mado-timeline .markdown-preview-sizer>div>h2:before{
 	content:"";
 	width:2px;
-	height:45px;
 	border-radius:100%;
 	background:var(--text-faint);
-	opacity:0.7;
 	position:absolute;
-	top:-38px;
-	left:47%;
+    height: 40px;
+    top: -35px;
+    left: 50%;
+	opacity:0.5;
 }
 .mado-timeline .markdown-preview-sizer>div.is-collapsed>h2{
 	margin-bottom:13px;
@@ -2146,7 +2182,17 @@ div.callout[data-callout*="mado-panel-list"] ul li{
 	text-align:left;
 	width:100%;
 	overflow:visible;
-	min-height:auto;
+	margin-inline-start:0;
+}
+/* fix some panel-link margin issue */
+[class*="mado-panel-list"] .markdown-preview-sizer>div ul li:has(>p){
+	display: inline-block;
+	vertical-align: super;
+	height: calc(100% + 16px);
+	width: calc(100% + 23px);
+	padding-block: 8px;
+	margin-block: -8px;
+	text-align: left;
 }
 [class*="mado-panel-list"][class*="mado-panel-link"] .markdown-preview-sizer>div ul li a:not(.tag),
 div.callout[data-callout*="mado-panel-list"][data-callout*="-link"] ul li a:not(.tag){
@@ -2185,18 +2231,20 @@ div.callout[data-callout*="mado-panel-list"][data-callout*="-rightbox"] ul li.ta
 /* the very first list */
 [class*="mado-panel-list"] .markdown-preview-sizer>div>ul>li>.list-collapse-indicator,
 div.callout[data-callout*="mado-panel-list"] .callout-content>ul>li>.list-collapse-indicator{
-	margin-left:-57px;
+	margin-left:-53px;
+	margin-top:7px;
 }
 /* all normal list */
 [class*="mado-panel-list"] .markdown-preview-sizer>div li>.list-collapse-indicator,
 div.callout[data-callout*="mado-panel-list"] ul li>.list-collapse-indicator{
-	margin-left:-49px;
+	margin-left:-40px;
+	margin-top:7px;
 }
 /* all task lisk */
 [class*="mado-panel-list"] .markdown-preview-sizer>div li.task-list-item>.list-collapse-indicator,
 div.callout[data-callout*="mado-panel-list"] ul li.task-list-item>.list-collapse-indicator{
-	margin-left:-77px;
-	margin-top:0;
+	margin-left:-73px;
+	margin-top:7px;
 }
 /* rightbox task lisk */
 [class*="mado-panel-list-rightbox"] .markdown-preview-sizer>div li.task-list-item>.list-collapse-indicator,
@@ -2206,12 +2254,12 @@ div.callout[data-callout*="mado-panel-list"][data-callout*="-rightbox"] ul li.ta
 /* normal list inside a task list */
 [class*="mado-panel-list"] .markdown-preview-sizer>div li.task-list-item li:not(.task-list-item)>.list-collapse-indicator,
 div.callout[data-callout*="mado-panel-list"] ul li.task-list-item li:not(.task-list-item)>.list-collapse-indicator{
-	margin-left:-57px;
+	margin-left:-53px;
 }
 /* task list inside a normal list */
 [class*="mado-panel-list"] .markdown-preview-sizer>div li:not(.task-list-item)>ul>li.task-list-item>.list-collapse-indicator,
 div.callout[data-callout*="mado-panel-list"] ul li:not(.task-list-item)>ul>li.task-list-item>.list-collapse-indicator{
-	margin-left:-69px;
+	margin-left:-60px;
 }
 
 [class*="mado-panel-list"] .markdown-preview-sizer>div li :is(ul,ol),
@@ -2345,6 +2393,59 @@ img.banner-image{
 }
 .kanban-plugin .markdown-preview-view{
 	padding-inline:3px;
+}
+
+.kanban-plugin__lane {
+    background: var(--background-fourth);
+    box-shadow: var(--window-shadow);
+}
+.kanban-plugin__lane-items>div {
+    margin-top: 7px;
+}
+.kanban-plugin__lane-items.kanban-plugin__vertical.kanban-plugin__scroll-container{
+    background: var(--background-primary);
+	margin:0;
+	padding:7px 11px;
+}
+.kanban-plugin__item-wrapper{
+    box-shadow: var(--panel-shadow);
+}
+.kanban-plugin__item-title-wrapper {
+    background: var(--background-fourth);
+    padding: 11px 15px;
+}
+.kanban-plugin__item-metadata{
+	padding-top:0;
+}
+/* .markdown-preview-view.kanban-plugin__markdown-preview-view.kanban-plugin__item-markdown>div>ul{ */
+    /* border: var(--border); */
+    /* padding: 23px 33px; */
+    /* background: var(--background-secondary); */
+    /* border-radius: var(--panel-radius); */
+    /* margin-block: 7px; */
+    /* box-shadow: var(--panel-shadow); */
+/* } */
+
+.kanban-plugin__item-markdown code{
+    font-family: var(--font-monospace);
+    background-color: var(--code-background);
+    border-radius: var(--code-radius);
+    font-size: var(--code-size);
+    padding: 0.1em 0.25em;
+}
+.kanban-plugin__item-markdown :not(pre)>code{
+	color:var(--inline-code-color);
+}
+.kanban-plugin__item-markdown pre{
+	position: relative;
+    padding: var(--size-4-3) var(--size-4-4);
+    min-height: 38px;
+    background-color: var(--code-background);
+    border-radius: var(--code-radius);
+    white-space: var(--code-white-space);
+}
+.kanban-plugin__item-markdown pre .copy-code-button{
+	display:none;
 }
 
 /* icon and button styling */
