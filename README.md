@@ -2,8 +2,7 @@
 
 ---  
 
-**_NOTE: This theme is now on maintenance mode and won't be updated in the future.  
-You may check out [this issue](https://github.com/hydescarf/Obsidian-Theme-Mado-11/issues/21) for possible css snippet fixes past Obsidian v16.0._**  
+**_NOTE: This theme is now on maintenance mode, update won't be frequent, and no feature/pull requests will be accepted._**  
 
 ---  
 
