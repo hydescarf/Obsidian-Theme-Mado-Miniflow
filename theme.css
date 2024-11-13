@@ -947,6 +947,11 @@ body:not(.native-scrollbars) .modal-close-button{
 	height:var(--ribbon-width);
 	width:var(--ribbon-width);
 }
+/* fix the above design since v16/17 */
+.clickable-icon:before{
+	height:41px;
+	width:41px;
+}
 
 
 /* extend setting clickable area to the bottom */
@@ -966,6 +971,7 @@ body:not(.native-scrollbars) .modal-close-button{
 	padding-left:5px;
 }
 .workspace-split.mod-horizontal:is(.mod-left-split,.mod-right-split) .workspace-tab-header:last-child,
+.workspace-split.mod-horizontal:is(.mod-left-split,.mod-right-split) .sidebar-toggle-button.mod-left,
 .workspace-split.mod-horizontal:is(.mod-left-split,.mod-right-split) .sidebar-toggle-button.mod-right{
 	padding-right:5px;
 }
