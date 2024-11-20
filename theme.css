@@ -1185,14 +1185,9 @@ input[type=checkbox]:checked:after{
 .markdown-rendered.show-indentation-guide li.task-list-item > :is(ul,ol)::before{
 	left:-10px;
 }
-/* Collapse indicator position adjustment */
-.markdown-source-view.mod-cm6 .cm-line:not(.cm-active):not(.HyperMD-header):not(.HyperMD-task-line) .cm-fold-indicator .collapse-indicator,
-.markdown-source-view.mod-cm6 .cm-line:hover .cm-fold-indicator .collapse-indicator, .markdown-source-view.mod-cm6 .cm-fold-indicator.is-collapsed .collapse-indicator{
-	padding-right:15px;
-}
-/* fix spacing for collapse icon on task-list */
-.markdown-source-view.mod-cm6.is-live-preview .cm-line.HyperMD-list-line .cm-fold-indicator .collapse-indicator{
-	padding-inline-end:15px;
+/* Collapse indicator position adjustment on lists & tasks */
+.markdown-source-view.mod-cm6.is-live-preview .cm-line.HyperMD-list-line.HyperMD-task-line .cm-fold-indicator .collapse-indicator{
+	padding-inline-end:5px;
 }
 .markdown-rendered .task-list-item .list-collapse-indicator{
 	margin-top:5px;
@@ -1221,10 +1216,6 @@ ul, ol{
 }
 
 
-/* Collapse indicator position adjustment */
-.markdown-source-view.mod-cm6 .cm-line:not(.cm-active):not(.HyperMD-header):not(.HyperMD-task-line) .cm-fold-indicator .collapse-indicator{
-	padding-right:23px;
-}
 ol > li::marker,
 ul > li::marker,
 .cm-s-obsidian .cm-formatting-list{
@@ -2238,19 +2229,17 @@ div.callout[data-callout*="mado-panel-list"][data-callout*="-rightbox"] ul li.ta
 [class*="mado-panel-list"] .markdown-preview-sizer>div>ul>li>.list-collapse-indicator,
 div.callout[data-callout*="mado-panel-list"] .callout-content>ul>li>.list-collapse-indicator{
 	margin-left:-53px;
-	margin-top:7px;
 }
 /* all normal list */
 [class*="mado-panel-list"] .markdown-preview-sizer>div li>.list-collapse-indicator,
 div.callout[data-callout*="mado-panel-list"] ul li>.list-collapse-indicator{
 	margin-left:-40px;
-	margin-top:7px;
 }
 /* all task lisk */
 [class*="mado-panel-list"] .markdown-preview-sizer>div li.task-list-item>.list-collapse-indicator,
 div.callout[data-callout*="mado-panel-list"] ul li.task-list-item>.list-collapse-indicator{
 	margin-left:-73px;
-	margin-top:7px;
+	margin-top:0px;
 }
 /* rightbox task lisk */
 [class*="mado-panel-list-rightbox"] .markdown-preview-sizer>div li.task-list-item>.list-collapse-indicator,
